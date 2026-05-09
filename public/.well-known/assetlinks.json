@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.iftxstudio.parentscare",
+      "sha256_cert_fingerprints": [
+        "F9:DA:66:4E:67:42:DB:3C:A6:20:E4:9A:84:BD:D9:F1:E9:37:DE:F8:B8:57:F7:EB:A2:0E:DE:35:04:10:19:89"
+      ]
+    }
+  }
+]
