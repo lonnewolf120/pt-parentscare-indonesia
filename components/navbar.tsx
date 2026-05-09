@@ -10,9 +10,16 @@ export default function Navbar() {
       <div className="container flex h-20 items-center justify-between px-4 md:px-6">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0 flex items-center space-x-2 md:space-x-3">
-          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-pink-500 via-pink-600 to-red-500 rounded-xl flex items-center justify-center shadow-lg">
+          {/* <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-pink-500 via-pink-600 to-red-500 rounded-xl flex items-center justify-center shadow-lg">
             <span className="font-bold text-white text-lg">P</span>
-          </div>
+          </div> */}
+          <Image 
+            src="/ptlogo.png" 
+            alt="ParentsCare Logo" 
+            width={48} 
+            height={48} 
+            className="w-10 h-10 md:w-12 md:h-12 rounded-xl shadow-lg"
+          />
           <div className="hidden sm:block">
             <p className="font-bold text-gray-900 text-base md:text-lg leading-tight">ParentsCare</p>
             <p className="text-xs text-gray-500">Indonesia</p>
