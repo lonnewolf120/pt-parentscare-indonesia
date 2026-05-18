@@ -19,7 +19,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { MapPin, Phone, Mail, Clock } from "lucide-react"
 import { Textarea } from "@/components/ui/textarea"
+import ContactForm from "@/components/contact-form"
 import { Mail, MapPin, Phone, Clock } from "lucide-react"
 import {
   Accordion,
@@ -69,7 +71,7 @@ export default function Contact() {
                   <Phone className="mt-1 h-5 w-5 text-pink" />
                   <div>
                     <p className="font-medium">Pesan Kami di Whatsapp</p>
-                    <p className="text-sm text-muted-foreground">+62 821 1000 9811</p>                  
+                    <p className="text-sm text-muted-foreground">+62 821-1663-798</p>                  
                     <p className="text-sm text-muted-foreground">Waktu respons: dalam 24 jam</p>
                   </div>
                 </div>
@@ -130,7 +132,7 @@ export default function Contact() {
                 <Phone className="h-5 w-5 text-red" />
                 <div>
                   <p className="font-medium">Hotline Darurat</p>
-                  <p className="text-sm text-muted-foreground">+62 821 1000 9811</p>
+                  <p className="text-sm text-muted-foreground">+62 821-1663-798</p>
                   <p className="text-sm text-muted-foreground">Tersedia 24/7 untuk kebutuhan perawatan mendesak</p>
                 </div>
               </div>
@@ -139,39 +141,7 @@ export default function Contact() {
         </div>
 
         {/* Contact Form */}
-        <Card className="border-pink">
-          <CardHeader>
-            <CardTitle><span className="text-pink">Kirim Pesan kepada Kami</span></CardTitle>
-            <CardDescription>Isi formulir di bawah ini dan kami akan menghubungi Anda sesegera mungkin.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form className="space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="name">Nama</Label>
-                <Input id="name" placeholder="Nama Anda" className="border-pink focus:ring-pink" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="Email Anda" className="border-pink focus:ring-pink" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="subject">Subjek</Label>
-                <Input id="subject" placeholder="Subjek pesan" className="border-pink focus:ring-pink" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="message">Pesan</Label>
-                <Textarea
-                  id="message"
-                  placeholder="Pesan Anda"
-                  className="min-h-[150px] border-pink focus:ring-pink"
-                />
-              </div>
-              <Button type="submit" className="w-full bg-pink text-white hover:bg-pink-accent">
-                Kirim Pesan
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+        <ContactForm />
       </div>
 
       {/* FAQ Section */}

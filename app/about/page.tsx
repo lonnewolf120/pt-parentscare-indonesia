@@ -433,7 +433,7 @@ export default function AboutContent() {
         </div>
       </motion.section> */}
 
-            {/* WHY CAREGIVER SERVICES MATTER */}
+      {/* WHY CAREGIVER SERVICES MATTER */}
       <motion.section
         className="py-16 bg-background"
         initial="initial"

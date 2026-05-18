@@ -60,22 +60,19 @@ export default function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold text-pink">Terhubung Dengan Kami</h3>
             <div className="flex space-x-4">
-              <Link href="#" className="text-muted-foreground hover:text-pink">
+              <a href="https://www.facebook.com/share/1JXAgm8Apq/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-pink">
                 <Facebook className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-pink">
-                <Twitter className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-pink">
+              </a>
+              <a href="https://www.instagram.com/parentscare.indonesia?igsh=MXFzaHV4ZDEwanVwcQ==" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-pink">
                 <Instagram className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-pink">
+              </a>
+              <a href="https://www.tiktok.com/@parentscare.indonesia?_r=1&_t=ZS-95RnEnXBtuG" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-pink">
                 <Linkedin className="h-5 w-5" />
-              </Link>
+              </a>
             </div>
             <div className="mt-4 space-y-2 text-sm">
               <p>Email: ptparentscareindonesia@gmail.com</p>
-              <p>Telepon: +62 821 1000 9811</p>
+              <p>Telepon: +62 821-1663-798</p>
               <p>Alamat: Jl. Pringgondani No. 21</p>
               <p>Cilandak, Jakarta Selatan 12450</p>
               <p>DKI Jakarta, Indonesia</p>

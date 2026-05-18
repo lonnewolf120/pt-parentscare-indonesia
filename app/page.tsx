@@ -44,25 +44,39 @@ export default function Home() {
 
   const mediaData: MediaItem[] = [
     {
+      type: "video",
+      title: "Sams Abu Shomen | Interview | Talk Show | Maasranga Ranga Shokal",
+      description: "An interview with Sams Abu Shomen, founder and CEO of ParentsCare, discussing the journey of the healthcare institution.",
+      url: "https://www.youtube.com/watch?v=EdJ2-tKJw70",
+      thumbnail: "/images/youtube-placeholder.png",
+    },
+    {
+      type: "video",
+      title: "Parents Care Limited - Shark Tank Bangladesh - S1",
+      description: "Parents Care Limited's appearance on Shark Tank Bangladesh, showcasing their service fitting for today's society.",
+      url: "https://bongobd.com/watch/OPsOVRzQLUn",
+      thumbnail: "/images/bongobd.png",
+    },
+    {
+      type: "article",
+      title: "Parents Care Limited | Trust Bank PLC.",
+      description: "Parents Care Limited offers discounts on various care packages for TBL Debit & Credit Card Holders & TBL Employees.",
+      url: "https://www.tblbd.com/node/1684",
+      thumbnail: "/caregiver.jpg",
+    },
+    {
       type: "article",
       title: "ParentsCare: A new door for elderly citizens",
       description: "The senior healthcare startup ParentsCare aims to provide elderly parents and senior citizens the help they need in their old age.",
       url: "https://www.thedailystar.net/tech-startup/news/parentscare-new-door-elderly-citizens-3137091",
-      thumbnail: "/caregiver_2.jpeg",
+      thumbnail: "/caregiver_2.jpg",
     },
     {
       type: "article",
       title: "Care-giving sector needs the attention it deserves",
       description: "A discussion on the importance of the care-giving sector in Bangladesh and its potential for employment and economic growth.",
       url: "https://today.thefinancialexpress.com.bd/editorial/care-giving-sector-needs-the-attention-it-deserves-1730386729",
-      thumbnail: "/3.jpeg",
-    },
-    {
-      type: "article",
-      title: "Parents Care Indonesia.",
-      description: "Parents Care Limited offersvarious care packages for everyone.",
-      url: "https://parentscareindonesia.xyz",
-      thumbnail: "/1.jpeg",
+      thumbnail: "/nurse.webp",
     },
   ];
 
@@ -115,16 +129,17 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <a 
-                    href="https://api.whatsapp.com/send/?phone=%2B6282110009811&text=Halo,%20saya%20ingin%20mengetahui%20tentang%20layanan%20ParentsCare" 
+                    href="https://api.whatsapp.com/send/?phone=%2B628216637898&text=Halo,%20saya%20ingin%20mengetahui%20tentang%20layanan%20ParentsCare" 
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
                     <Button
                       size="lg"
-                      className="bg-gradient-to-r from-pink-500 to-red-500 text-white hover:from-pink-600 hover:to-red-600 px-8 py-6 text-base font-semibold shadow-lg hover:shadow-xl transition-all"
+                      className="bg-gradient-to-r from-pink-500 to-red-500 text-white hover:from-pink-600 hover:to-red-600 px-8 py-6 text-base font-semibold shadow-lg hover:shadow-xl transition-all flex items-center space-x-2"
                     >
+                      <MessageCircle className="w-5 h-5" />
                       <span>Hubungi Kami</span>
-                      <ArrowRight className="ml-2 w-5 h-5" />
+                      <ArrowRight className="w-5 h-5" />
                     </Button>
                   </a>
                 </motion.div>
