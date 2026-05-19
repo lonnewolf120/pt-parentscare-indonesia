@@ -22,7 +22,6 @@ import { Label } from "@/components/ui/label"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
 import { Textarea } from "@/components/ui/textarea"
 import ContactForm from "@/components/contact-form"
-import { Mail, MapPin, Phone, Clock } from "lucide-react"
 import {
   Accordion,
   AccordionContent,
