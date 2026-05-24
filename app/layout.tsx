@@ -46,10 +46,10 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/icon-192.png" />
         <meta name="theme-color" content="#ec4899" />
-        <meta name="geo.region" content="ID" />
-        <meta name="geo.placename" content="Indonesia" />
-        <meta name="geo.position" content="23.8103;90.4125" />
-        <meta name="ICBM" content="23.8103, 90.4125" />
+        <meta name="geo.region" content="ID-DK" />
+        <meta name="geo.placename" content="Jakarta Selatan, Indonesia" />
+        <meta name="geo.position" content="-6.2625;106.7744" />
+        <meta name="ICBM" content="-6.2625, 106.7744" />
       </head>
       <body className={inter.className}>
         <div className="flex min-h-screen flex-col">

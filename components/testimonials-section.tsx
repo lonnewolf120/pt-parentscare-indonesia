@@ -15,17 +15,17 @@ const testimonials = [
   },
   {
     name: "Dr. Mahfuz Ashraf",
-    role: "Profesor & Dekan, Lincone Inst. of HE, Australia",
+    role: "Profesor & Dekan, Universitas Australia",
     image: "/client2.jpeg",
     rating: 5,
     text: "Saya menghubungi ParentsCare untuk ibu saya yang sedang sakit, dan para perawat mereka memberikan layanan yang sangat baik kepada ibu saya. Layanan mereka benar-benar sangat membantu!",
   },
   {
     name: "Shah Rafiul Kabir",
-    role: "COO, Ingen Technology ltd.",
+    role: "Kepala Operasional, Perusahaan Teknologi",
     image: "https://images.crunchbase.com/image/upload/c_thumb,h_256,w_256,f_auto,g_face,z_0.7,q_auto:eco,dpr_1/wipmcctm9ly5ygseojb0",
     rating: 5,
-    text: "Karena jadwal kerja harian saya yang sibuk, saya sering khawatir tentang perawatan kesehatan ayah saya yang sedang sakit. Parents Care menghilangkan semua kekhawatiran saya, seperti apakah ayah saya sudah makan, apakah beliau sudah minum obat dengan benar, apakah tekanan darahnya diperiksa, apakah diabetesnya dipantau, dan apakah beliau dirawat dengan baik setiap saat.",
+    text: "Karena jadwal kerja harian saya yang sibuk, saya sering khawatir tentang perawatan kesehatan ayah saya yang sedang sakit. ParentsCare menghilangkan semua kekhawatiran saya, seperti apakah ayah saya sudah makan, apakah beliau sudah minum obat dengan benar, apakah tekanan darahnya diperiksa, apakah diabetesnya dipantau, dan apakah beliau dirawat dengan baik setiap saat.",
   },
 ]
 
@@ -42,8 +42,8 @@ const testimonials = [
   <div className="container mx-auto px-4">
     <div className="text-center mb-16">
       <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4">
-        Apa Kata Kami{" "}
-        <span className="text-pink">Pelanggan</span>
+        Apa Kata{" "}
+        <span className="text-pink">Pelanggan Kami</span>
       </h2>
 
       <p className="text-xl text-white max-w-2xl mx-auto">

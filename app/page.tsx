@@ -6,7 +6,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Heart, Shield, Clock, Star, ArrowRight, MessageCircle } from "lucide-react"
+import { Heart, Shield, Clock, Star, ArrowRight, MessageCircle, Users, Handshake, Instagram, Music } from "lucide-react"
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from "framer-motion"
 import CustomCursor from "@/components/custom-cursor"
 import ParticleBackground from "@/components/particle-background"
@@ -45,10 +45,38 @@ export default function Home() {
   const mediaData: MediaItem[] = [
     {
       type: "video",
-      title: "Sams Abu Shomen | Interview | Talk Show | Maasranga Ranga Shokal",
-      description: "An interview with Sams Abu Shomen, founder and CEO of ParentsCare, discussing the journey of the healthcare institution.",
+      title: "Wawancara CEO ParentsCare Indonesia - Perjalanan Layanan Kesehatan",
+      description: "Wawancara mendalam dengan pendiri dan CEO ParentsCare Indonesia tentang visi dan misi pengembangan layanan kesehatan rumah berkualitas untuk keluarga Indonesia.",
       url: "https://www.youtube.com/watch?v=EdJ2-tKJw70",
       thumbnail: "/images/youtube-placeholder.png",
+    },
+    {
+      type: "video",
+      title: "ParentsCare Indonesia - Testimoni Pelanggan Puas",
+      description: "Testimoni dari ribuan keluarga Indonesia yang telah merasakan manfaat layanan pengasuh, perawat, dan nanny profesional ParentsCare.",
+      url: "https://bongobd.com/watch/OPsOVRzQLUn",
+      thumbnail: "/images/bongobd.png",
+    },
+    {
+      type: "article",
+      title: "ParentsCare Indonesia | Kemitraan dengan Lembaga Kesehatan",
+      description: "ParentsCare Indonesia berkomitmen bermitra dengan lembaga kesehatan terkemuka untuk memberikan layanan perawatan berkualitas tinggi dengan harga terjangkau.",
+      url: "https://www.tblbd.com/node/1684",
+      thumbnail: "/caregiver.jpg",
+    },
+    {
+      type: "article",
+      title: "ParentsCare: Solusi Baru untuk Perawatan Lansia Indonesia",
+      description: "ParentsCare Indonesia adalah startup kesehatan yang bertujuan memberikan solusi perawatan terbaik untuk orang tua dan lansia di Indonesia.",
+      url: "https://www.thedailystar.net/tech-startup/news/parentscare-new-door-elderly-citizens-3137091",
+      thumbnail: "/caregiver_2.jpg",
+    },
+    {
+      type: "article",
+      title: "Industri Perawatan Rumah Memerlukan Perhatian yang Layak",
+      description: "Diskusi mendalam tentang pentingnya industri perawatan rumah di Indonesia dan potensinya dalam penciptaan lapangan kerja dan pertumbuhan ekonomi.",
+      url: "https://today.thefinancialexpress.com.bd/editorial/care-giving-sector-needs-the-attention-it-deserves-1730386729",
+      thumbnail: "/nurse.webp",
     },
     {
       type: "video",

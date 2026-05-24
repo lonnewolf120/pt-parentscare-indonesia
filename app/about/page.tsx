@@ -9,10 +9,10 @@ import { motion } from "framer-motion"
 
 export default function AboutContent() {
   const team = [
-    { name: "Sams Abu Shomen", role: "CEO & Founder", image: "/ceo.png" },
-    { name: "Sharmiz Fatema", role: "COO & Co-founder", image: "/coo.png" },
-    { name: "Iftekharul Islam", role: "CTO", image: "/cto.png" },
-    { name: "Md. Mejbah Uddin", role: "CMO", image: "/cmo.png" },
+    { name: "Sams Abu Shomen", role: "CEO & Pendiri", image: "/ceo.png" },
+    { name: "Sharmiz Fatema", role: "COO & Pendiri Bersama", image: "/coo.png" },
+    { name: "Iftekharul Islam", role: "Kepala Teknologi", image: "/cto.png" },
+    { name: "Md. Mejbah Uddin", role: "Kepala Pemasaran", image: "/cmo.png" },
   ];
 
   const stats = [

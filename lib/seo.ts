@@ -1,103 +1,100 @@
 import { Metadata } from 'next'
 
 export const siteConfig = {
-  name: 'ParentsCare',
-  title: 'ParentsCare - Best Caregiver, Nurse & Nanny Services in Bangladesh | Dhaka',
-  description: 'Leading caregiver, nurse, and nanny services in Bangladesh. Professional home care, elderly care, patient care, childcare, and healthcare services in Dhaka, Chittagong, Sylhet. 24/7 trusted caregivers, certified nurses, experienced nannies. Book online.',
-  url: 'https://parentscare.com.bd',
-  ogImage: 'https://parentscare.com.bd/og-image.jpg',
+  name: 'ParentsCare Indonesia',
+  title: 'ParentsCare - Layanan Pengasuh, Perawat & Nanny Terbaik di Indonesia | Jakarta',
+  description: 'Layanan pengasuh, perawat, dan nanny profesional terbaik di Indonesia. Perawatan lansia, perawatan pasien, dan layanan kesehatan rumah terpercaya di Jakarta, Bandung, dan kota-kota besar Indonesia. Pengasuh bersertifikat, perawat profesional, dan nanny berpengalaman tersedia 24/7. Pesan secara online sekarang.',
+  url: 'https://parentscare.co.id',
+  ogImage: 'https://parentscare.co.id/og-image.jpg',
   keywords: [
-    // Primary Keywords - Caregiver
-    'caregiver service bangladesh',
-    'caregiver in dhaka',
-    'home caregiver bangladesh',
-    'professional caregiver dhaka',
-    'elderly caregiver bangladesh',
-    'patient caregiver service',
-    'বাংলাদেশে কেয়ারগিভার সেবা',
+    // Primary Keywords - Pengasuh
+    'layanan pengasuh indonesia',
+    'pengasuh di jakarta',
+    'pengasuh rumahan profesional',
+    'pengasuh lansia jakarta',
+    'pengasuh pasien terbaik',
+    'jasa pengasuh bersertifikat',
     
-    // Primary Keywords - Nurse
-    'nurse service bangladesh',
-    'home nurse dhaka',
-    'professional nurse service',
-    'private nurse bangladesh',
-    'patient care nurse dhaka',
-    'nursing service bangladesh',
-    'নার্স সেবা বাংলাদেশ',
-    'হোম নার্সিং সার্ভিস ঢাকা',
+    // Primary Keywords - Perawat
+    'layanan perawat indonesia',
+    'perawat rumahan jakarta',
+    'layanan perawat profesional',
+    'perawat privat indonesia',
+    'perawat kesehatan jakarta',
+    'jasa perawat berpengalaman',
+    'perawat home care terpercaya',
     
     // Primary Keywords - Nanny
-    'nanny service bangladesh',
-    'nanny in dhaka',
-    'professional nanny bangladesh',
-    'child care nanny',
-    'baby care nanny dhaka',
-    'নানি সেবা বাংলাদেশ',
-    'শিশু পরিচর্যা',
+    'layanan nanny indonesia',
+    'nanny di jakarta',
+    'nanny profesional bersertifikat',
+    'perawatan anak nanny',
+    'babysitter nanny jakarta',
+    'nanny bayi berpengalaman',
     
     // Location-based Keywords
-    'caregiver service dhaka',
-    'nurse service dhaka',
-    'nanny service dhaka',
-    'caregiver chittagong',
-    'nurse chittagong',
-    'caregiver sylhet',
-    'nurse sylhet',
-    'healthcare service bangladesh',
+    'pengasuh jakarta',
+    'perawat jakarta',
+    'nanny jakarta',
+    'pengasuh bandung',
+    'perawat bandung',
+    'pengasuh surabaya',
+    'perawat surabaya',
+    'layanan kesehatan rumah indonesia',
     
     // Service-specific Keywords
-    'elderly care bangladesh',
-    'senior care service',
-    'patient care at home',
-    'home healthcare bangladesh',
-    'post surgery care',
-    'disabled care service',
-    'dementia care bangladesh',
-    'alzheimer care service',
+    'perawatan lansia indonesia',
+    'layanan perawatan manula',
+    'perawatan pasien di rumah',
+    'home healthcare indonesia',
+    'perawatan pasca operasi',
+    'perawatan disabilitas',
+    'perawatan demensia',
+    'perawatan alzheimer',
     
     // Child Care Keywords
-    'childcare service bangladesh',
-    'baby care service dhaka',
-    'newborn care bangladesh',
-    'infant care service',
-    'toddler care bangladesh',
+    'layanan perawatan anak',
+    'babysitter bayi jakarta',
+    'perawatan bayi baru lahir',
+    'perawatan bayi dan balita',
+    'nanny balita profesional',
     
     // Professional Terms
-    'certified nurse bangladesh',
-    'trained caregiver dhaka',
-    'experienced nanny',
-    'qualified healthcare provider',
-    'licensed nurse bangladesh',
-    'medical attendant service',
+    'perawat bersertifikat indonesia',
+    'pengasuh terlatih profesional',
+    'nanny berpengalaman terpercaya',
+    'penyedia layanan kesehatan',
+    'perawat home care terdaftar',
+    'asisten medis bersertifikat',
     
     // Service Features
-    '24/7 caregiver service',
-    'live-in caregiver bangladesh',
-    'hourly nurse service',
-    'full-time nanny dhaka',
-    'part-time caregiver',
-    'emergency nurse service',
+    'layanan pengasuh 24 jam',
+    'pengasuh live-in indonesia',
+    'perawat per jam',
+    'nanny full-time jakarta',
+    'pengasuh part-time',
+    'layanan darurat kesehatan',
     
     // Specific Needs
-    'physiotherapy assistant bangladesh',
-    'stroke patient care',
-    'cancer patient care home',
-    'diabetes care bangladesh',
-    'bedridden patient care',
-    'special needs care',
+    'asisten fisioterapi indonesia',
+    'perawatan pasien stroke',
+    'perawatan pasien kanker',
+    'perawatan diabetes di rumah',
+    'perawatan pasien lumpuh',
+    'perawatan kebutuhan khusus',
     
-    // Bangla Keywords
-    'বয়স্ক পরিচর্যা',
-    'রোগী পরিচর্যা সেবা',
-    'বাসায় নার্সিং সেবা',
-    'পেশাদার কেয়ারগিভার',
-    'শিশু পরিচর্যাকারী',
+    // Indonesian Keywords
+    'pengasuh berpengalaman',
+    'perawat profesional terpercaya',
+    'jasa nanny berkualitas',
+    'layanan kesehatan terbaik',
+    'perawatan rumahan terpercaya',
   ],
-  author: 'ParentsCare Bangladesh',
-  creator: 'ParentsCare',
-  publisher: 'ParentsCare Bangladesh',
-  category: 'Healthcare Services',
-  classification: 'Healthcare, Home Care, Nursing Services, Childcare',
+  author: 'PT Parents Care Indonesia',
+  creator: 'ParentsCare Indonesia',
+  publisher: 'PT Parents Care Indonesia',
+  category: 'Layanan Kesehatan',
+  classification: 'Layanan Kesehatan, Perawatan Rumah, Layanan Keperawatan, Perawatan Anak',
 }
 
 export const jsonLdWebsite = {
@@ -119,58 +116,64 @@ export const jsonLdWebsite = {
 export const jsonLdOrganization = {
   '@context': 'https://schema.org',
   '@type': 'HealthcareOrganization',
-  name: 'ParentsCare Bangladesh',
-  alternateName: ['ParentsCare', 'Parents Care BD'],
+  name: 'PT Parents Care Indonesia',
+  alternateName: ['ParentsCare Indonesia', 'ParentsCare'],
   url: siteConfig.url,
   logo: `${siteConfig.url}/logo.png`,
   description: siteConfig.description,
   address: {
     '@type': 'PostalAddress',
-    addressCountry: 'BD',
-    addressRegion: 'Dhaka',
-    addressLocality: 'Dhaka',
-    streetAddress: 'Dhaka, Bangladesh',
+    addressCountry: 'ID',
+    addressRegion: 'DKI Jakarta',
+    addressLocality: 'Jakarta Selatan',
+    streetAddress: 'Jl. Pringgondani No. 21, Cilandak',
+    postalCode: '12450',
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 23.8103,
-    longitude: 90.4125,
+    latitude: -6.2625,
+    longitude: 106.7744,
   },
   areaServed: [
     {
       '@type': 'City',
-      name: 'Dhaka',
+      name: 'Jakarta',
     },
     {
       '@type': 'City',
-      name: 'Chittagong',
+      name: 'Bandung',
     },
     {
       '@type': 'City',
-      name: 'Sylhet',
+      name: 'Surabaya',
+    },
+    {
+      '@type': 'City',
+      name: 'Medan',
     },
     {
       '@type': 'Country',
-      name: 'Bangladesh',
+      name: 'Indonesia',
     },
   ],
   contactPoint: {
     '@type': 'ContactPoint',
-    contactType: 'Customer Service',
-    areaServed: 'BD',
-    availableLanguage: ['Bengali', 'English'],
+    contactType: 'Layanan Pelanggan',
+    telephone: '+62 821-1663-798',
+    areaServed: 'ID',
+    availableLanguage: ['id', 'en'],
   },
   sameAs: [
-    'https://www.facebook.com/parentscare',
-    'https://www.linkedin.com/company/parentscare',
-    'https://www.instagram.com/parentscare',
+    'https://www.facebook.com/share/1JXAgm8Apq/',
+    'https://www.instagram.com/parentscare.indonesia',
+    'https://www.tiktok.com/@parentscare.indonesia',
   ],
   medicalSpecialty: [
-    'Geriatrics',
-    'Home Healthcare',
-    'Nursing',
-    'Pediatrics',
-    'Patient Care',
+    'Geriatri',
+    'Perawatan Rumah',
+    'Keperawatan',
+    'Pediatri',
+    'Perawatan Pasien',
   ],
 }
 
@@ -178,24 +181,24 @@ export const jsonLdLocalBusiness = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': `${siteConfig.url}/#localbusiness`,
-  name: 'ParentsCare - Caregiver, Nurse & Nanny Services',
+  name: 'ParentsCare - Layanan Pengasuh, Perawat & Nanny',
   image: `${siteConfig.url}/og-image.jpg`,
   description: siteConfig.description,
   url: siteConfig.url,
-  telephone: '+880-XXX-XXXXXX',
+  telephone: '+62 821-1663-798',
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Dhaka',
-    addressLocality: 'Dhaka',
-    addressRegion: 'Dhaka Division',
-    postalCode: '1000',
-    addressCountry: 'BD',
+    streetAddress: 'Jl. Pringgondani No. 21, Cilandak',
+    addressLocality: 'Jakarta Selatan',
+    addressRegion: 'DKI Jakarta',
+    postalCode: '12450',
+    addressCountry: 'ID',
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 23.8103,
-    longitude: 90.4125,
+    latitude: -6.2625,
+    longitude: 106.7744,
   },
   openingHoursSpecification: [
     {
@@ -223,41 +226,41 @@ export const jsonLdLocalBusiness = {
 export const jsonLdService = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  serviceType: 'Healthcare and Caregiving Services',
+  serviceType: 'Layanan Kesehatan dan Perawatan',
   provider: {
     '@type': 'Organization',
-    name: 'ParentsCare Bangladesh',
+    name: 'PT Parents Care Indonesia',
   },
   areaServed: {
     '@type': 'Country',
-    name: 'Bangladesh',
+    name: 'Indonesia',
   },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Caregiving Services',
+    name: 'Layanan Perawatan dan Pengasuh',
     itemListElement: [
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Professional Caregiver Service',
-          description: 'Experienced caregivers for elderly care, patient care, and home assistance',
+          name: 'Layanan Pengasuh Profesional',
+          description: 'Pengasuh berpengalaman untuk perawatan lansia, perawatan pasien, dan bantuan rumah tangga',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Professional Nurse Service',
-          description: 'Certified nurses for home healthcare, patient care, and medical assistance',
+          name: 'Layanan Perawat Profesional',
+          description: 'Perawat bersertifikat untuk perawatan rumah, perawatan pasien, dan bantuan medis',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Professional Nanny Service',
-          description: 'Trained nannies for childcare, baby care, and newborn care',
+          name: 'Layanan Nanny Profesional',
+          description: 'Nanny terlatih untuk perawatan anak, perawatan bayi, dan perawatan bayi baru lahir',
         },
       },
     ],
@@ -279,7 +282,7 @@ export function generateMetadata({
   url?: string
   noIndex?: boolean
 }): Metadata {
-  const metaTitle = title ? `${title} | ParentsCare` : siteConfig.title
+  const metaTitle = title ? `${title} | ParentsCare Indonesia` : siteConfig.title
   const metaDescription = description || siteConfig.description
   const metaImage = image || siteConfig.ogImage
   const metaUrl = url ? `${siteConfig.url}${url}` : siteConfig.url
@@ -298,8 +301,8 @@ export function generateMetadata({
     alternates: {
       canonical: metaUrl,
       languages: {
-        'en-BD': metaUrl,
-        'bn-BD': metaUrl,
+        'id-ID': metaUrl,
+        'en-ID': metaUrl,
       },
     },
     robots: {
@@ -315,8 +318,8 @@ export function generateMetadata({
     },
     openGraph: {
       type: 'website',
-      locale: 'en_BD',
-      alternateLocale: ['bn_BD'],
+      locale: 'id_ID',
+      alternateLocale: ['en_ID'],
       url: metaUrl,
       title: metaTitle,
       description: metaDescription,
@@ -335,8 +338,8 @@ export function generateMetadata({
       title: metaTitle,
       description: metaDescription,
       images: [metaImage],
-      creator: '@parentscare',
-      site: '@parentscare',
+      creator: '@parentscare_id',
+      site: '@parentscare_id',
     },
     verification: {
       google: 'your-google-verification-code',
