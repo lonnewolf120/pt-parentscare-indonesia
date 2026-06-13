@@ -1,544 +1,345 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
-import Link from "next/link"
 import Image from "next/image"
+import Link from "next/link"
+import { motion } from "framer-motion"
+import {
+  ArrowRight,
+  Baby,
+  CheckCircle2,
+  ClipboardCheck,
+  HeartPulse,
+  MessageCircle,
+  Search,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Heart, Shield, Clock, Star, ArrowRight, MessageCircle, Users, Handshake, Instagram, Music } from "lucide-react"
-import { motion, AnimatePresence, useScroll, useTransform, useInView } from "framer-motion"
-import CustomCursor from "@/components/custom-cursor"
-import ParticleBackground from "@/components/particle-background"
-import HowItWorks from "@/components/how-it-works"
-import DownloadApp from "@/components/download-app"
+import ServicePricingPreview from "@/components/service-pricing-preview"
 import TestimonialsSection from "@/components/testimonials-section"
-import MediaCardsSection, { MediaItem } from "@/components/media-cards-section"
+import {
+  allServices,
+  createWhatsAppHref,
+  serviceAdvantages,
+  serviceNotes,
+} from "@/lib/service-pricing"
+
+const serviceIcons = {
+  caregiver: ShieldCheck,
+  nurse: HeartPulse,
+  nanny: Baby,
+}
+
+const accentStyles = {
+  pink: "text-pink-600 bg-pink-50 border-pink-100",
+  red: "text-red-600 bg-red-50 border-red-100",
+  blue: "text-blue-600 bg-blue-50 border-blue-100",
+}
+
+const matchingSteps = [
+  {
+    title: "Konsultasi kebutuhan",
+    description: "Ceritakan kondisi pasien, usia anak, jadwal, lokasi, dan preferensi keluarga melalui WhatsApp.",
+    icon: MessageCircle,
+  },
+  {
+    title: "Seleksi kandidat",
+    description: "Tim kami memilih caregiver, perawat, atau nanny yang paling sesuai dari database kandidat terverifikasi.",
+    icon: Search,
+  },
+  {
+    title: "Interview & dokumen",
+    description: "Anda dapat interview online/offline, lalu kami bantu proses identitas, alamat, dan dokumen perjanjian.",
+    icon: ClipboardCheck,
+  },
+  {
+    title: "Mulai layanan",
+    description: "Tanggal mulai disepakati, kontak dibagikan, dan admin tetap mendampingi selama masa layanan.",
+    icon: CheckCircle2,
+  },
+]
 
 export default function Home() {
-  // Arrays for alternating text
-  const caregiverTypes = ["Pengasuh", "Perawat", "Nanny"]
-  const recipientTypes = ["Anak", "Orang Tua", "Keluarga"]
-
-  // State to track current index
-  const [caregiverIndex, setCaregiverIndex] = useState(0)
-  const [recipientIndex, setRecipientIndex] = useState(0)
-
-  const { scrollYProgress } = useScroll()
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
-
-  const heroRef = useRef(null)
-  const featuresRef = useRef(null)
-  const isHeroInView = useInView(heroRef, { once: true })
-  const isFeaturesInView = useInView(featuresRef, { once: true })
-
-  // Effect to rotate text every 2.5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCaregiverIndex((prev) => (prev + 1) % caregiverTypes.length)
-      setRecipientIndex((prev) => (prev + 1) % recipientTypes.length)
-    }, 2500)
-
-    return () => clearInterval(interval)
-  }, [])
-
-  const mediaData: MediaItem[] = [
-    {
-      type: "video",
-      title: "Wawancara CEO ParentsCare Indonesia - Perjalanan Layanan Kesehatan",
-      description: "Wawancara mendalam dengan pendiri dan CEO ParentsCare Indonesia tentang visi dan misi pengembangan layanan kesehatan rumah berkualitas untuk keluarga Indonesia.",
-      url: "https://www.youtube.com/watch?v=EdJ2-tKJw70",
-      thumbnail: "/images/youtube-placeholder.png",
-    },
-    {
-      type: "video",
-      title: "ParentsCare Indonesia - Testimoni Pelanggan Puas",
-      description: "Testimoni dari ribuan keluarga Indonesia yang telah merasakan manfaat layanan pengasuh, perawat, dan nanny profesional ParentsCare.",
-      url: "https://bongobd.com/watch/OPsOVRzQLUn",
-      thumbnail: "/images/bongobd.png",
-    },
-    {
-      type: "article",
-      title: "ParentsCare Indonesia | Kemitraan dengan Lembaga Kesehatan",
-      description: "ParentsCare Indonesia berkomitmen bermitra dengan lembaga kesehatan terkemuka untuk memberikan layanan perawatan berkualitas tinggi dengan harga terjangkau.",
-      url: "https://www.tblbd.com/node/1684",
-      thumbnail: "/caregiver.jpg",
-    },
-    {
-      type: "article",
-      title: "ParentsCare: Solusi Baru untuk Perawatan Lansia Indonesia",
-      description: "ParentsCare Indonesia adalah startup kesehatan yang bertujuan memberikan solusi perawatan terbaik untuk orang tua dan lansia di Indonesia.",
-      url: "https://www.thedailystar.net/tech-startup/news/parentscare-new-door-elderly-citizens-3137091",
-      thumbnail: "/caregiver_2.jpg",
-    },
-    {
-      type: "article",
-      title: "Industri Perawatan Rumah Memerlukan Perhatian yang Layak",
-      description: "Diskusi mendalam tentang pentingnya industri perawatan rumah di Indonesia dan potensinya dalam penciptaan lapangan kerja dan pertumbuhan ekonomi.",
-      url: "https://today.thefinancialexpress.com.bd/editorial/care-giving-sector-needs-the-attention-it-deserves-1730386729",
-      thumbnail: "/nurse.webp",
-    },
-    {
-      type: "video",
-      title: "Parents Care Limited - Shark Tank Bangladesh - S1",
-      description: "Parents Care Limited's appearance on Shark Tank Bangladesh, showcasing their service fitting for today's society.",
-      url: "https://bongobd.com/watch/OPsOVRzQLUn",
-      thumbnail: "/images/bongobd.png",
-    },
-    {
-      type: "article",
-      title: "Parents Care Limited | Trust Bank PLC.",
-      description: "Parents Care Limited offers discounts on various care packages for TBL Debit & Credit Card Holders & TBL Employees.",
-      url: "https://www.tblbd.com/node/1684",
-      thumbnail: "/caregiver.jpg",
-    },
-    {
-      type: "article",
-      title: "ParentsCare: A new door for elderly citizens",
-      description: "The senior healthcare startup ParentsCare aims to provide elderly parents and senior citizens the help they need in their old age.",
-      url: "https://www.thedailystar.net/tech-startup/news/parentscare-new-door-elderly-citizens-3137091",
-      thumbnail: "/caregiver_2.jpg",
-    },
-    {
-      type: "article",
-      title: "Care-giving sector needs the attention it deserves",
-      description: "A discussion on the importance of the care-giving sector in Bangladesh and its potential for employment and economic growth.",
-      url: "https://today.thefinancialexpress.com.bd/editorial/care-giving-sector-needs-the-attention-it-deserves-1730386729",
-      thumbnail: "/nurse.webp",
-    },
-  ];
+  const whatsappHref = createWhatsAppHref(
+    "Halo, saya ingin konsultasi dan memesan layanan ParentsCare Indonesia.",
+  )
 
   return (
-    <div className="relative">
-      <CustomCursor />
-      <ParticleBackground />
+    <div className="bg-white text-gray-950">
+      <section className="relative min-h-[calc(100svh-5rem)] overflow-hidden bg-slate-950">
+        <Image
+          src="/caregiver_service.jpg"
+          alt="Caregiver profesional ParentsCare Indonesia mendampingi keluarga"
+          fill
+          priority
+          className="object-cover opacity-55"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/78 to-slate-950/30" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent" />
 
-      {/* Hero Section */}
-      <motion.section
-        ref={heroRef}
-        initial={{ opacity: 0 }}
-        animate={isHeroInView ? { opacity: 1 } : {}}
-        transition={{ duration: 0.8 }}
-        className="relative min-h-screen bg-white pt-24 overflow-hidden flex items-center"
-      >
-        {/* Decorative elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-pink-100 rounded-full blur-3xl opacity-30" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-20" />
-        </div>
-
-        <div className="relative z-10 container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left: Content */}
+        <div className="container relative z-10 flex min-h-[calc(100svh-5rem)] items-center py-20">
+          <div className="max-w-4xl">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={isHeroInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur"
             >
-              <div className="space-y-2">
-                <div className="inline-flex items-center space-x-2 bg-pink-100 text-pink-700 px-4 py-2 rounded-full">
-                  <span className="w-2 h-2 bg-pink-600 rounded-full" />
-                  <span className="text-sm font-medium">Dipercaya oleh ribuan keluarga Indonesia</span>
-                </div>
-              </div>
-
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
-                Perawatan Terpercaya untuk{" "}
-                <span className="bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
-                  Orang Terkasih
-                </span>
-              </h1>
-
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-lg">
-                ParentsCare Indonesia menyediakan pengasuh, nanny, dan perawat profesional yang telah terverifikasi untuk memberikan perawatan berkualitas tinggi dengan sentuhan personal untuk seluruh keluarga Anda.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <a 
-                    href="https://api.whatsapp.com/send/?phone=%2B628216637898&text=Halo,%20saya%20ingin%20mengetahui%20tentang%20layanan%20ParentsCare" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      size="lg"
-                      className="bg-gradient-to-r from-pink-500 to-red-500 text-white hover:from-pink-600 hover:to-red-600 px-8 py-6 text-base font-semibold shadow-lg hover:shadow-xl transition-all flex items-center space-x-2"
-                    >
-                      <MessageCircle className="w-5 h-5" />
-                      <span>Hubungi Kami</span>
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
-                  </a>
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link href="/services">
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="border-2 border-gray-300 text-gray-900 hover:border-pink-500 hover:text-pink-600 px-8 py-6 text-base font-semibold transition-all"
-                    >
-                      Lihat Layanan
-                    </Button>
-                  </Link>
-                </motion.div>
-              </div>
-
-              {/* Trust indicators */}
-              <div className="flex flex-wrap gap-8 pt-8 border-t border-gray-100">
-                <div className="space-y-1">
-                  <p className="text-2xl font-bold text-gray-900">500+</p>
-                  <p className="text-sm text-gray-600">Pengasuh Terverifikasi</p>
-                </div>
-                <div className="space-y-1">
-                  <p className="text-2xl font-bold text-gray-900">4.9★</p>
-                  <p className="text-sm text-gray-600">Rating Kepuasan</p>
-                </div>
-                <div className="space-y-1">
-                  <p className="text-2xl font-bold text-gray-900">Jakarta</p>
-                  <p className="text-sm text-gray-600">Kantor Resmi PT</p>
-                </div>
-              </div>
+              <ShieldCheck className="h-4 w-4" />
+              Layanan caregiver, perawat, dan nanny di Jakarta
             </motion.div>
 
-            {/* Right: Visual */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={isHeroInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative hidden md:block"
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.08 }}
+              className="mt-6 max-w-3xl text-4xl font-bold tracking-tight text-white md:text-6xl lg:text-7xl"
             >
-              <div className="relative w-full aspect-square">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-JHEvKCX1FVkbayjdqJeGq4E0PHDBGs.png"
-                  alt="ParentsCare Services"
-                  className="w-full h-full object-cover rounded-3xl shadow-2xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-pink-500/10 via-transparent to-blue-500/10 rounded-3xl pointer-events-none" />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
+              Perawatan rumah yang terasa aman sejak percakapan pertama.
+            </motion.h1>
 
-      {/* Features Section */}
-      <section ref={featuresRef} className="py-24 bg-gradient-to-b from-gray-50 to-white relative">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isFeaturesInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Komitmen ParentsCare Indonesia
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Kami berkomitmen pada nilai-nilai kepercayaan, keselamatan, dan keunggulan dalam memberikan perawatan berkualitas untuk keluarga Indonesia.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Shield,
-                title: "Terverifikasi & Terpercaya",
-                description: "Semua profesional kami melalui proses screening menyeluruh dan pemeriksaan latar belakang untuk memastikan keselamatan keluarga Anda.",
-                color: "red",
-                gradient: "from-red-500 to-red-600",
-              },
-              {
-                icon: Heart,
-                title: "Sentuhan Personal",
-                description: "Kami percaya perawatan yang berkualitas dimulai dengan memahami kebutuhan unik setiap keluarga Indonesia.",
-                color: "pink",
-                gradient: "from-pink-500 to-pink-600",
-              },
-              {
-                icon: Clock,
-                title: "Layanan 24/7",
-                description: "Tersedia kapan saja Anda membutuhkan dukungan. Tim kami siap membantu melalui WhatsApp, telepon, atau kunjungan langsung.",
-                color: "blue",
-                gradient: "from-blue-500 to-blue-600",
-              },
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isFeaturesInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="group"
-              >
-                <Card className="h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                  <div className={`h-2 bg-gradient-to-r ${feature.gradient}`} />
-                  <CardContent>
-                    <div
-                      className="p-8 text-center">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${feature.gradient} text-white mb-6`}
-                    >
-                      <feature.icon className="w-8 h-8" />
-                    </motion.div>
-                    <h3
-                      className={`text-2xl font-bold mb-4 text-${feature.color} group-hover:scale-105 transition-transform duration-300`}
-                    >
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About Company Section */}
-      <section className="py-24 bg-white">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-12"
-          >
-            <div className="text-center space-y-4 mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                Tentang ParentsCare Indonesia
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                PT Parents Care Indonesia adalah perusahaan penyedia layanan sumber daya manusia terdaftar dan resmi di Indonesia
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="space-y-6"
-              >
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-bold text-gray-900">Kredibilitas & Legalitas</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start space-x-3">
-                      <span className="text-pink-600 font-bold text-lg">✓</span>
-                      <div>
-                        <p className="font-medium text-gray-900">PT PMA (Penanaman Modal Asing)</p>
-                        <p className="text-sm text-gray-600">Terdaftar secara resmi di Indonesia</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <span className="text-pink-600 font-bold text-lg">✓</span>
-                      <div>
-                        <p className="font-medium text-gray-900">KBLI 78300</p>
-                        <p className="text-sm text-gray-600">Penyedia SDM & Manajemen Fungsi HR</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <span className="text-pink-600 font-bold text-lg">✓</span>
-                      <div>
-                        <p className="font-medium text-gray-900">NIB & NPWP Aktif</p>
-                        <p className="text-sm text-gray-600">Berstatus Low Risk dengan KPP</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <span className="text-pink-600 font-bold text-lg">✓</span>
-                      <div>
-                        <p className="font-medium text-gray-900">Kantor Resmi</p>
-                        <p className="text-sm text-gray-600">Jl. Pringgondani No. 21, Cilandak, Jakarta Selatan</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="grid grid-cols-2 gap-6"
-              >
-                <div className="bg-gradient-to-br from-pink-50 to-pink-100 p-8 rounded-2xl text-center space-y-2">
-                  <p className="text-3xl font-bold text-pink-600">2026</p>
-                  <p className="text-sm text-gray-700 font-medium">Tahun Didirikan</p>
-                  <p className="text-xs text-gray-600">22 Januari 2026</p>
-                </div>
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl text-center space-y-2">
-                  <p className="text-3xl font-bold text-blue-600">Rp 2.5M</p>
-                  <p className="text-sm text-gray-700 font-medium">Modal Bayar</p>
-                  <p className="text-xs text-gray-600">Modal Resmi</p>
-                </div>
-                <div className="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl text-center space-y-2">
-                  <p className="text-3xl font-bold text-red-600">3</p>
-                  <p className="text-sm text-gray-700 font-medium">Direktur</p>
-                  <p className="text-xs text-gray-600">Tim Profesional</p>
-                </div>
-                <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl text-center space-y-2">
-                  <p className="text-3xl font-bold text-green-600">500+</p>
-                  <p className="text-sm text-gray-700 font-medium">Pengasuh</p>
-                  <p className="text-xs text-gray-600">Terverifikasi</p>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Values Section - Indonesian Cultural Significance */}
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20 space-y-4"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Nilai-Nilai Keluarga Indonesia
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              ParentsCare memahami kedalaman nilai-nilai keluarga Indonesia dan mengintegrasikannya dalam setiap layanan perawatan
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: "👨‍👩‍👧‍👦",
-                title: "Kebersamaan Keluarga",
-                description: "Kami percaya perawatan yang baik memperkuat ikatan keluarga dan menjaga kehangatan hubungan antar generasi.",
-              },
-              {
-                icon: "❤️",
-                title: "Gotong Royong",
-                description: "Semangat saling membantu adalah inti layanan kami. Tim profesional kami siap mendampingi keluarga Anda dengan hati.",
-              },
-              {
-                icon: "🤝",
-                title: "Kepercayaan & Kehormatan",
-                description: "Kepercayaan yang diberikan keluarga adalah amanah berharga yang kami jaga dengan integritas tinggi.",
-              },
-            ].map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow border border-gray-100"
-              >
-                <div className="text-5xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Promotional Banner Section */}
-      <section className="py-16 bg-gradient-to-r from-gray-50 to-pink-50">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="grid md:grid-cols-2 gap-12 items-center"
-          >
-            <div className="space-y-6">
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Terhubung dengan ParentsCare
-              </h3>
-              <p className="text-lg text-gray-700">
-                Bergabunglah dengan ribuan keluarga Indonesia yang mempercayai kami untuk perawatan keluarga mereka. Layanan profesional dengan sentuhan personal.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <a 
-                  href="https://www.facebook.com/share/1JXAgm8Apq/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2"
-                >
-                  <Button variant="outline" className="border-pink-500 text-pink-600 hover:bg-pink-50 font-medium">
-                    <span>f</span>
-                    <span>Facebook</span>
-                  </Button>
-                </a>
-                <a 
-                  href="https://www.instagram.com/parentscare.indonesia?igsh=MXFzaHV4ZDEwanVwcQ==" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2"
-                >
-                  <Button variant="outline" className="border-pink-500 text-pink-600 hover:bg-pink-50 font-medium">
-                    <span>📷</span>
-                    <span>Instagram</span>
-                  </Button>
-                </a>
-                <a 
-                  href="https://www.tiktok.com/@parentscare.indonesia?_r=1&_t=ZS-95RnEnXBtuG" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2"
-                >
-                  <Button variant="outline" className="border-pink-500 text-pink-600 hover:bg-pink-50 font-medium">
-                    <span>🎵</span>
-                    <span>TikTok</span>
-                  </Button>
-                </a>
-              </div>
-            </div>
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="rounded-3xl overflow-hidden shadow-2xl"
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.16 }}
+              className="mt-6 max-w-2xl text-base leading-8 text-slate-200 md:text-xl"
             >
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-JHEvKCX1FVkbayjdqJeGq4E0PHDBGs.png"
-                alt="ParentsCare Indonesia Services"
-                className="w-full h-auto object-cover"
-              />
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+              ParentsCare Indonesia membantu keluarga menemukan pengasuh lansia,
+              perawat pasien, dan nanny anak yang tepat dengan proses seleksi,
+              interview, dokumen, dan pendampingan admin melalui WhatsApp.
+            </motion.p>
 
-      {/* How It Works Section */}
-      <HowItWorks />
-
-      {/* Download App Section */}
-      <DownloadApp />
-
-      {/* Testimonials Section */}
-      <TestimonialsSection/>
-
-      {/* Media Cards Section */}
-      <MediaCardsSection mediaData={mediaData} />
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-red-500 via-pink-500 to-blue-500 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10" />
-        <div className="container relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Siap Menemukan Pengasuh Sempurna Anda?</h2>
-            <p className="text-xl mb-10 max-w-3xl mx-auto opacity-90 leading-relaxed">
-              Bergabunglah dengan ribuan keluarga puas yang mempercayai ParentsCare untuk kebutuhan perawatan mereka. Mulai perjalanan Anda hari ini.
-            </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link href="/signup">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.24 }}
+              className="mt-8 flex flex-col gap-3 sm:flex-row"
+            >
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
-                  className="bg-white text-pink hover:bg-gray-100 px-10 py-4 text-xl font-semibold shadow-lg"
+                  className="w-full bg-white text-slate-950 hover:bg-slate-100 sm:w-auto"
                 >
-                  Mulai Hari Ini
-                  <ArrowRight className="ml-2 w-6 h-6" />
+                  <MessageCircle className="h-5 w-5" />
+                  Konsultasi via WhatsApp
+                </Button>
+              </a>
+              <Link href="/services">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full border-white/70 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto"
+                >
+                  Lihat paket layanan
+                  <ArrowRight className="h-5 w-5" />
                 </Button>
               </Link>
             </motion.div>
-          </motion.div>
+
+            <div className="mt-10 grid max-w-3xl grid-cols-3 gap-4 border-t border-white/15 pt-6 text-white">
+              {[
+                ["500+", "kandidat terverifikasi"],
+                ["24/7", "WhatsApp support"],
+                ["Jakarta", "kantor PT resmi"],
+              ].map(([value, label]) => (
+                <div key={value}>
+                  <div className="text-2xl font-bold md:text-3xl">{value}</div>
+                  <div className="mt-1 text-xs text-slate-300 md:text-sm">{label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="-mt-12 relative z-20">
+        <div className="container">
+          <div className="grid gap-4 rounded-xl border border-gray-100 bg-white p-4 shadow-xl md:grid-cols-3">
+            {allServices.map((service) => {
+              const Icon = serviceIcons[service.id as keyof typeof serviceIcons]
+
+              return (
+                <a
+                  key={service.id}
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group rounded-lg border border-gray-100 p-5 transition hover:border-pink-200 hover:bg-pink-50/40"
+                >
+                  <div className={`mb-4 flex h-11 w-11 items-center justify-center rounded-lg border ${accentStyles[service.accent]}`}>
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h2 className="text-xl font-bold text-gray-950">{service.title}</h2>
+                  <p className="mt-2 min-h-12 text-sm leading-6 text-gray-600">{service.description}</p>
+                  <div className="mt-4 inline-flex items-center text-sm font-semibold text-pink-600">
+                    Konsultasikan kebutuhan
+                    <ArrowRight className="ml-1 h-4 w-4 transition group-hover:translate-x-1" />
+                  </div>
+                </a>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28">
+        <div className="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <span className="inline-flex rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700">
+              Kenapa keluarga memilih kami
+            </span>
+            <h2 className="mt-5 text-3xl font-bold tracking-tight md:text-5xl">
+              Bukan sekadar daftar kandidat. Kami mengelola prosesnya sampai siap bekerja.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-gray-600">
+              Banyak keluarga tahu mereka butuh bantuan, tetapi tidak tahu harus
+              memilih tipe tenaga, jadwal, gaji, dokumen, atau proses interview.
+              ParentsCare merapikan semua langkah itu agar keputusan terasa aman.
+            </p>
+            <div className="mt-8 grid gap-3">
+              {serviceAdvantages.map((item) => (
+                <div key={item} className="flex gap-3 rounded-lg border border-gray-100 bg-gray-50 p-4">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
+                  <span className="text-sm font-medium text-gray-700">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                image: "/nurse.jpg",
+                title: "Saat pasien butuh perhatian klinis",
+                copy: "Perawat membantu tanda vital, tekanan darah, diabetes, insulin, obat, dan pengawasan pasien.",
+              },
+              {
+                image: "/nanny.jpg",
+                title: "Saat anak butuh rutinitas yang lembut",
+                copy: "Nanny membantu makan, bermain, aktivitas harian, dan kebutuhan anak sesuai usia.",
+              },
+              {
+                image: "/caregiver.jpg",
+                title: "Saat lansia butuh pendamping harian",
+                copy: "Pengasuh membantu mandi, makan, mobilitas ringan, obat, dan kenyamanan sehari-hari.",
+              },
+              {
+                image: "/client2.jpeg",
+                title: "Saat keluarga butuh ketenangan",
+                copy: "Admin tetap tersedia untuk dukungan, koordinasi, dan penggantian bila diperlukan.",
+              },
+            ].map((story) => (
+              <Card key={story.title} className="overflow-hidden border-gray-100 shadow-sm">
+                <div className="relative aspect-[4/3]">
+                  <Image src={story.image} alt={story.title} fill className="object-cover" />
+                </div>
+                <CardContent className="p-5">
+                  <h3 className="font-bold text-gray-950">{story.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-gray-600">{story.copy}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-950 py-20 text-white md:py-28">
+        <div className="container">
+          <div className="mb-12 max-w-3xl">
+            <span className="inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/15">
+              Proses WhatsApp-led
+            </span>
+            <h2 className="mt-5 text-3xl font-bold tracking-tight md:text-5xl">
+              Dari pertanyaan pertama sampai hari pertama bekerja.
+            </h2>
+            <p className="mt-4 text-base leading-8 text-slate-300">
+              Setiap tahap dirancang untuk mengurangi risiko: kebutuhan dicatat,
+              kandidat disaring, dokumen dilengkapi, dan onboarding dipantau.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-4">
+            {matchingSteps.map((step, index) => (
+              <div key={step.title} className="rounded-xl border border-white/10 bg-white/[0.04] p-6">
+                <div className="flex items-center justify-between">
+                  <step.icon className="h-6 w-6 text-pink-300" />
+                  <span className="text-sm font-bold text-white/40">0{index + 1}</span>
+                </div>
+                <h3 className="mt-6 text-lg font-bold">{step.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-300">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ServicePricingPreview />
+
+      <section className="border-y border-gray-100 bg-gray-50 py-16">
+        <div className="container grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-center">
+          <div>
+            <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm">
+              Ketentuan transparan
+            </span>
+            <h2 className="mt-5 text-3xl font-bold md:text-4xl">
+              Harga jelas, kebutuhan operasional juga jelas.
+            </h2>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {serviceNotes.map((note) => (
+              <div key={note} className="rounded-lg border border-gray-100 bg-white p-4 text-sm leading-6 text-gray-700 shadow-sm">
+                {note}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <TestimonialsSection />
+
+      <section className="bg-white py-20">
+        <div className="container">
+          <div className="relative overflow-hidden rounded-xl bg-slate-950 p-8 text-white md:p-12">
+            <Image
+              src="/testimonial-client.png"
+              alt="Keluarga ParentsCare Indonesia"
+              fill
+              className="object-cover opacity-20"
+            />
+            <div className="relative z-10 max-w-3xl">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold ring-1 ring-white/15">
+                <Sparkles className="h-4 w-4" />
+                Mulai dengan konsultasi singkat
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight md:text-5xl">
+                Ceritakan kondisi keluarga Anda. Kami bantu pilih layanan yang tepat.
+              </h2>
+              <p className="mt-4 text-base leading-8 text-slate-200">
+                Kirim kebutuhan Anda melalui WhatsApp: tipe layanan, usia/kondisi
+                pasien atau anak, jadwal, lokasi, dan tanggal mulai. Tim kami akan
+                membalas dengan langkah berikutnya.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="w-full bg-white text-slate-950 hover:bg-slate-100 sm:w-auto">
+                    <MessageCircle className="h-5 w-5" />
+                    WhatsApp ParentsCare
+                  </Button>
+                </a>
+                <Link href="/services">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full border-white/70 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto"
+                  >
+                    Bandingkan paket
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

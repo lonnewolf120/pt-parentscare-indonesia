@@ -29,6 +29,7 @@ import {
 } from "lucide-react"
 import CustomCursor from "@/components/custom-cursor"
 import ParticleBackground from "@/components/particle-background"
+import { createWhatsAppHref } from "@/lib/service-pricing"
 
 // Carousel component (must be defined after appFeatures)
 function FeatureCarousel({ features }: { features: typeof appFeatures }) {
@@ -49,7 +50,7 @@ function FeatureCarousel({ features }: { features: typeof appFeatures }) {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -50 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-2xl shadow-xl p-6 md:p-10"
+        className="flex flex-col md:flex-row items-center gap-8 bg-gradient-to-br from-white to-pink-50/30 rounded-2xl shadow-xl p-6 md:p-10 border border-pink-100/50"
       >
         <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
           <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${feature.gradient} text-white mb-6 shadow-lg`}>
@@ -106,8 +107,8 @@ const appFeatures = [
   },
   {
     icon: Calendar,
-    title: "Easy Scheduling",
-    description: "Book appointments with flexible scheduling options that fit your needs",
+    title: "WhatsApp-Assisted Scheduling",
+    description: "Share your preferred schedule and requirements with our team through WhatsApp",
     color: "blue",
     gradient: "from-pink-600 to-pink-800",
     screenshot: "/screen2.jpg",
@@ -122,8 +123,8 @@ const appFeatures = [
   },
   {
     icon: CreditCard,
-    title: "Secure Payments",
-    description: "Safe and secure payment processing with multiple payment options",
+    title: "Transparent Pricing",
+    description: "Review package pricing before our team confirms the right service for your family",
     color: "pink",
     gradient: "from-pink-500 to-pink-600",
     screenshot: "/screen4.jpg",
@@ -131,15 +132,15 @@ const appFeatures = [
   {
     icon: Bell,
     title: "Real-time Notifications",
-    description: "Stay updated with instant notifications about your bookings and care updates",
+    description: "Stay updated with care reminders and service updates",
     color: "blue",
     gradient: "from-pink-600 to-pink-800",
     screenshot: "/screen5.jpg",
   },
   {
     icon: MessageCircle,
-    title: "In-App Communication",
-    description: "Chat directly with caregivers and get real-time updates about your child",
+    title: "WhatsApp Support",
+    description: "Contact the ParentsCare team directly for booking, support, and service questions",
     color: "red",
     gradient: "from-red-500 to-red-600",
     screenshot: "/screen6.jpg",
@@ -164,8 +165,8 @@ const steps = [
   },
   {
     step: "02",
-    title: "Login and Book Services",
-    description: "Browse verified caregivers, read reviews, and book the perfect match for your family",
+    title: "Explore and Contact Us",
+    description: "Review caregiver information and contact our team on WhatsApp for service matching",
     icon: UserCheck,
     color: "blue",
     gradient: "from-blue-500 to-blue-600",
@@ -173,21 +174,21 @@ const steps = [
       "Browse caregiver profiles",
       "Read verified reviews",
       "Compare services and prices",
-      "Instant booking confirmation",
+      "Booking handled by WhatsApp",
     ],
     image: "/image2.jpeg",
   },
   {
     step: "03",
     title: "Take the Professional Service",
-    description: "Enjoy peace of mind with professional care while staying connected through our app",
+    description: "Enjoy peace of mind with professional care while our team stays available through WhatsApp",
     icon: Heart,
     color: "red",
     gradient: "from-red-500 to-red-600",
     details: [
       "Professional care delivery",
       "Real-time updates and photos",
-      "24/7 support availability",
+      "24/7 WhatsApp support",
       "Rate and review experience",
     ],
     image: "/image3.jpeg",
@@ -212,7 +213,7 @@ const benefits = [
   {
     icon: Clock,
     title: "24/7 Available",
-    description: "Round-the-clock support and emergency assistance",
+    description: "Round-the-clock WhatsApp support and emergency assistance",
     stat: "24/7",
     statLabel: "Support Available",
   },
@@ -226,6 +227,10 @@ const benefits = [
 ]
 
 export default function AppFeatures() {
+  const whatsappHref = createWhatsAppHref(
+    "Halo, saya ingin bertanya tentang layanan ParentsCare.",
+  )
+
   const [activeStep, setActiveStep] = useState(0)
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
@@ -307,8 +312,7 @@ export default function AppFeatures() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="mb-10 max-w-3xl mx-auto text-xl md:text-2xl opacity-90 leading-relaxed"
             >
-              Download our mobile app for the ultimate convenience in booking trusted caregivers. Available on Google
-              Play Store with seamless booking, real-time updates, and 24/7 support.
+              Download our mobile app as a companion for ParentsCare services. Service booking and customer support are handled through WhatsApp so our team can guide you directly.
             </motion.p>
 
             <motion.div
@@ -321,7 +325,7 @@ export default function AppFeatures() {
                 <Link href="https://play.google.com/store/apps/details?id=com.iftxstudio.parentscare" target="_blank">
                   <Button
                     size="lg"
-                    className="bg-white text-pink hover:bg-pink hover:text-white transition-all duration-300 px-8 py-4 text-lg font-semibold shadow-lg cursor-hover"
+                    className="bg-gradient-to-r from-pink-500 to-pink-600 text-white hover:from-pink-600 hover:to-pink-700 transition-all duration-300 px-8 py-4 text-lg font-semibold shadow-lg cursor-hover"
                   >
                     <Download className="mr-2 w-5 h-5" />
                     Download Now
@@ -346,7 +350,7 @@ export default function AppFeatures() {
       </motion.section>
 
       {/* App Features & Screenshots Carousel Section */}
-      <section id="features" ref={featuresRef} className="py-20 bg-white relative">
+      <section id="features" ref={featuresRef} className="py-20 bg-gradient-to-br from-white via-pink-50/20 to-blue-50/20 relative">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -358,7 +362,7 @@ export default function AppFeatures() {
               Powerful App Features
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our mobile app is designed to make finding and booking trusted caregivers as simple as possible
+              Our mobile app helps families learn about caregivers, care routines, and updates while booking stays guided by our WhatsApp team.
             </p>
           </motion.div>
 
@@ -426,7 +430,7 @@ export default function AppFeatures() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex justify-center mb-12"
           >
-            <div className="flex items-center gap-4 p-2 bg-white rounded-full shadow-lg">
+            <div className="flex items-center gap-4 p-2 bg-gradient-to-r from-white to-pink-50 rounded-full shadow-lg border border-pink-100/50">
               {steps.map((step, index) => (
                 <motion.button
                   key={index}
@@ -595,8 +599,7 @@ export default function AppFeatures() {
                 Ready to Get Started?
               </h2>
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                Download the ParentsCare app today and experience the convenience of professional childcare at your
-                fingertips. Available now on Google Play Store.
+                Download the ParentsCare app today for service information and care tools, or contact our WhatsApp team to book caregiver, nurse, and nanny services.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -613,16 +616,16 @@ export default function AppFeatures() {
                 </motion.div>
 
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link href="/register">
+                  <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
                       variant="outline"
                       className="border-2 border-pink text-pink hover:bg-pink hover:text-white transition-all duration-300 px-10 py-4 text-xl font-semibold cursor-hover bg-transparent"
                     >
-                      Sign Up on Web
+                      Contact WhatsApp
                       <ArrowRight className="ml-2 w-6 h-6" />
                     </Button>
-                  </Link>
+                  </a>
                 </motion.div>
               </div>
 

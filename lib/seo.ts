@@ -2,22 +2,27 @@ import { Metadata } from 'next'
 
 export const siteConfig = {
   name: 'ParentsCare Indonesia',
-  title: 'ParentsCare - Layanan Pengasuh, Perawat & Nanny Terbaik di Indonesia | Jakarta',
-  description: 'Layanan pengasuh, perawat, dan nanny profesional terbaik di Indonesia. Perawatan lansia, perawatan pasien, dan layanan kesehatan rumah terpercaya di Jakarta, Bandung, dan kota-kota besar Indonesia. Pengasuh bersertifikat, perawat profesional, dan nanny berpengalaman tersedia 24/7. Pesan secara online sekarang.',
-  url: 'https://parentscare.co.id',
-  ogImage: 'https://parentscare.co.id/og-image.jpg',
+  title: 'ParentsCare Indonesia - Jasa Pengasuh, Perawat Home Care & Nanny di Jakarta',
+  description: 'ParentsCare Indonesia menyediakan jasa pengasuh lansia, perawat home care, dan nanny profesional di Jakarta dan Jabodetabek. Konsultasi, pencocokan kandidat, interview, dan booking layanan dilakukan melalui WhatsApp.',
+  url: 'https://www.parentscareindonesia.xyz',
+  ogImage: 'https://www.parentscareindonesia.xyz/feature-verified.png',
   keywords: [
     // Primary Keywords - Pengasuh
     'layanan pengasuh indonesia',
     'pengasuh di jakarta',
+    'jasa pengasuh jakarta',
+    'jasa caregiver jakarta',
     'pengasuh rumahan profesional',
     'pengasuh lansia jakarta',
+    'caregiver lansia jakarta',
     'pengasuh pasien terbaik',
     'jasa pengasuh bersertifikat',
     
     // Primary Keywords - Perawat
     'layanan perawat indonesia',
     'perawat rumahan jakarta',
+    'perawat home care jakarta',
+    'jasa perawat home care',
     'layanan perawat profesional',
     'perawat privat indonesia',
     'perawat kesehatan jakarta',
@@ -27,6 +32,8 @@ export const siteConfig = {
     // Primary Keywords - Nanny
     'layanan nanny indonesia',
     'nanny di jakarta',
+    'jasa nanny jakarta',
+    'nanny bayi jakarta',
     'nanny profesional bersertifikat',
     'perawatan anak nanny',
     'babysitter nanny jakarta',
@@ -38,6 +45,9 @@ export const siteConfig = {
     'nanny jakarta',
     'pengasuh bandung',
     'perawat bandung',
+    'caregiver jabodetabek',
+    'nanny jabodetabek',
+    'perawat jabodetabek',
     'pengasuh surabaya',
     'perawat surabaya',
     'layanan kesehatan rumah indonesia',
@@ -70,6 +80,8 @@ export const siteConfig = {
     // Service Features
     'layanan pengasuh 24 jam',
     'pengasuh live-in indonesia',
+    'caregiver live-in jakarta',
+    'nanny live-in jakarta',
     'perawat per jam',
     'nanny full-time jakarta',
     'pengasuh part-time',
@@ -89,6 +101,9 @@ export const siteConfig = {
     'jasa nanny berkualitas',
     'layanan kesehatan terbaik',
     'perawatan rumahan terpercaya',
+    'booking caregiver whatsapp',
+    'booking nanny whatsapp',
+    'booking perawat whatsapp',
   ],
   author: 'PT Parents Care Indonesia',
   creator: 'ParentsCare Indonesia',
@@ -119,7 +134,7 @@ export const jsonLdOrganization = {
   name: 'PT Parents Care Indonesia',
   alternateName: ['ParentsCare Indonesia', 'ParentsCare'],
   url: siteConfig.url,
-  logo: `${siteConfig.url}/logo.png`,
+  logo: `${siteConfig.url}/ptlogo-sm.png`,
   description: siteConfig.description,
   address: {
     '@type': 'PostalAddress',
@@ -138,6 +153,10 @@ export const jsonLdOrganization = {
     {
       '@type': 'City',
       name: 'Jakarta',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Jabodetabek',
     },
     {
       '@type': 'City',
@@ -160,6 +179,7 @@ export const jsonLdOrganization = {
     '@type': 'ContactPoint',
     contactType: 'Layanan Pelanggan',
     telephone: '+62 821-1663-798',
+    url: 'https://api.whatsapp.com/send/?phone=%2B628211663798',
     areaServed: 'ID',
     availableLanguage: ['id', 'en'],
   },
@@ -182,10 +202,11 @@ export const jsonLdLocalBusiness = {
   '@type': 'LocalBusiness',
   '@id': `${siteConfig.url}/#localbusiness`,
   name: 'ParentsCare - Layanan Pengasuh, Perawat & Nanny',
-  image: `${siteConfig.url}/og-image.jpg`,
+  image: siteConfig.ogImage,
   description: siteConfig.description,
   url: siteConfig.url,
   telephone: '+62 821-1663-798',
+  email: 'ptparentscareindonesia@gmail.com',
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
@@ -221,6 +242,7 @@ export const jsonLdLocalBusiness = {
     ratingValue: '4.8',
     reviewCount: '500',
   },
+  areaServed: ['Jakarta Selatan', 'DKI Jakarta', 'Jabodetabek', 'Indonesia'],
 }
 
 export const jsonLdService = {
@@ -241,6 +263,13 @@ export const jsonLdService = {
     itemListElement: [
       {
         '@type': 'Offer',
+        priceCurrency: 'IDR',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          priceCurrency: 'IDR',
+          minPrice: 5400000,
+          maxPrice: 7000000,
+        },
         itemOffered: {
           '@type': 'Service',
           name: 'Layanan Pengasuh Profesional',
@@ -249,6 +278,13 @@ export const jsonLdService = {
       },
       {
         '@type': 'Offer',
+        priceCurrency: 'IDR',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          priceCurrency: 'IDR',
+          minPrice: 6500000,
+          maxPrice: 10000000,
+        },
         itemOffered: {
           '@type': 'Service',
           name: 'Layanan Perawat Profesional',
@@ -257,6 +293,13 @@ export const jsonLdService = {
       },
       {
         '@type': 'Offer',
+        priceCurrency: 'IDR',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          priceCurrency: 'IDR',
+          minPrice: 3000000,
+          maxPrice: 8500000,
+        },
         itemOffered: {
           '@type': 'Service',
           name: 'Layanan Nanny Profesional',
@@ -265,6 +308,37 @@ export const jsonLdService = {
       },
     ],
   },
+}
+
+export const jsonLdFaq = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Bagaimana cara booking caregiver, perawat, atau nanny ParentsCare Indonesia?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Booking layanan ParentsCare Indonesia dilakukan melalui WhatsApp. Tim kami akan mencatat kebutuhan, membagikan kandidat yang sesuai, membantu interview, dan mengatur tanggal mulai layanan.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apakah ParentsCare menyediakan layanan pengasuh lansia dan perawat home care di Jakarta?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ya. ParentsCare Indonesia menyediakan pengasuh lansia, caregiver pasien, perawat home care, dan nanny untuk keluarga di Jakarta dan area layanan Indonesia.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Apakah harga layanan sudah termasuk transport dan makanan?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Biaya transport tetap Rp 300.000. Klien menyediakan makanan untuk caregiver atau nanny: layanan 12 jam mendapat 1 kali makan dan layanan 24 jam mendapat 3 kali makan.',
+      },
+    },
+  ],
 }
 
 export function generateMetadata({

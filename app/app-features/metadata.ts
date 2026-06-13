@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: 'Aplikasi ParentsCare Indonesia - Booking Pengasuh, Perawat & Nanny Online',
-  description: 'Download aplikasi ParentsCare Indonesia untuk booking mudah pengasuh, perawat, dan nanny. Fitur lengkap: pencarian profil, rating pelanggan, booking instan, tracking GPS, pembayaran aman, dan support 24/7. Tersedia di Android dan iOS.',
+  title: 'Aplikasi ParentsCare Indonesia - Informasi Caregiver, Perawat & Nanny',
+  description: 'Download aplikasi ParentsCare Indonesia sebagai companion app untuk informasi caregiver, perawat, nanny, reminder, dan update layanan. Booking layanan dan customer support dilakukan melalui WhatsApp.',
   keywords: [
     'aplikasi ParentsCare',
-    'booking pengasuh online',
+    'aplikasi pengasuh Indonesia',
     'aplikasi perawat rumahan',
     'download nanny app',
     'aplikasi caregiver',
     'layanan rumahan digital',
-    'platform booking kesehatan',
+    'support WhatsApp ParentsCare',
   ],
   url: '/app-features',
 })

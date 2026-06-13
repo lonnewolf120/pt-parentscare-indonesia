@@ -11,6 +11,7 @@ import { AlertCircle, CheckCircle } from 'lucide-react'
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
+  const whatsappNumber = '628211663798'
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -26,9 +27,21 @@ export default function ContactForm() {
       return
     }
 
-    // Show success message
+    const whatsappMessage = [
+      `Nama: ${name}`,
+      `Email: ${email}`,
+      `Subjek: ${subject}`,
+      '',
+      `Pesan: ${message}`,
+    ].join('\n')
+
+    window.open(
+      `https://api.whatsapp.com/send/?phone=%2B${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`,
+      '_blank',
+      'noopener,noreferrer',
+    )
+
     setSubmitted(true)
-    // Reset form
     e.currentTarget.reset()
     
     // Clear success message after 5 seconds
@@ -40,14 +53,14 @@ export default function ContactForm() {
   return (
     <Card className="border-pink">
       <CardHeader>
-        <CardTitle><span className="text-pink">Kirim Pesan kepada Kami</span></CardTitle>
-        <CardDescription>Isi formulir di bawah ini dan kami akan menghubungi Anda sesegera mungkin.</CardDescription>
+        <CardTitle><span className="text-pink">Kirim Pesan via WhatsApp</span></CardTitle>
+        <CardDescription>Isi formulir di bawah ini untuk membuka chat WhatsApp dengan detail pesan Anda.</CardDescription>
       </CardHeader>
       <CardContent>
         {submitted && (
           <div className="mb-4 flex items-center gap-2 rounded-lg bg-green-50 p-3 text-green-700 border border-green-200">
             <CheckCircle className="h-5 w-5" />
-            <p className="text-sm font-medium">Kami telah menerima pesan Anda. Terima kasih telah menghubungi kami!</p>
+            <p className="text-sm font-medium">WhatsApp telah dibuka dengan pesan Anda. Silakan kirim chat untuk menghubungi tim kami.</p>
           </div>
         )}
         
@@ -97,7 +110,7 @@ export default function ContactForm() {
             />
           </div>
           <Button type="submit" className="w-full bg-pink text-white hover:bg-pink-accent">
-            Kirim Pesan
+            Lanjutkan ke WhatsApp
           </Button>
         </form>
       </CardContent>

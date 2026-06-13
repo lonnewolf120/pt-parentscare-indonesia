@@ -3,7 +3,7 @@ import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Cari Pengasuh, Perawat & Nanny Profesional - Direktori ParentsCare',
-  description: 'Temukan pengasuh, perawat, dan nanny profesional bersertifikat di ParentsCare Indonesia. Jelajahi profil lengkap, pengalaman, dan rating dari 800+ caregiver terverifikasi. Cari berdasarkan lokasi, spesialisasi, dan ketersediaan. Hubungi kami sekarang untuk booking pengasuh terbaik.',
+  description: 'Temukan pengasuh, perawat, dan nanny profesional bersertifikat di ParentsCare Indonesia. Tim kami membantu mencocokkan kebutuhan keluarga dengan kandidat terverifikasi. Booking layanan dilakukan melalui WhatsApp.',
   keywords: [
     'cari pengasuh profesional',
     'daftar perawat rumahan',

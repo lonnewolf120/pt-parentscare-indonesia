@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
+import { siteConfig } from '@/lib/seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://parentscare.com.bd'
+  const baseUrl = siteConfig.url
   const currentDate = new Date()
 
   // Define all routes with their priorities and update frequencies
@@ -40,6 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/app-features`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/career`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
     {

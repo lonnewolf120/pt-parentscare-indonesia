@@ -10,7 +10,7 @@ import {
   jsonLdOrganization, 
   jsonLdLocalBusiness,
   jsonLdService,
-  siteConfig 
+  jsonLdFaq,
 } from "@/lib/seo"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -41,10 +41,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }}
         />
-        <link rel="canonical" href={siteConfig.url} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+        />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/icon-192.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#ec4899" />
         <meta name="geo.region" content="ID-DK" />
         <meta name="geo.placename" content="Jakarta Selatan, Indonesia" />

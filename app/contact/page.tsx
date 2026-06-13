@@ -2,25 +2,22 @@ import { Metadata } from 'next'
 import { generateMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = generateMetadata({
-  title: 'Contact ParentsCare - Caregiver, Nurse & Nanny Services in Bangladesh',
-  description: 'Contact ParentsCare for professional caregiver, nurse, and nanny services in Bangladesh. 24/7 customer support. Available in Dhaka, Chittagong, Sylhet. Call, email, or visit us. Emergency service available. Quick response guaranteed.',
+  title: 'Hubungi ParentsCare Indonesia - Booking Caregiver, Perawat & Nanny',
+  description: 'Hubungi ParentsCare Indonesia melalui WhatsApp untuk booking caregiver, perawat, nanny, dan dukungan pelanggan 24/7. Email tersedia untuk pertanyaan non-mendesak.',
   keywords: [
-    'contact parentscare',
-    'caregiver service contact bangladesh',
-    'nurse service helpline dhaka',
-    'book caregiver bangladesh',
-    'emergency nurse service',
-    '24/7 caregiver support',
+    'kontak ParentsCare Indonesia',
+    'booking caregiver Indonesia',
+    'whatsapp pengasuh Jakarta',
+    'layanan pelanggan ParentsCare',
+    'nanny Jakarta WhatsApp',
+    'perawat home care WhatsApp',
   ],
   url: '/contact',
 })
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
-import { Textarea } from "@/components/ui/textarea"
+import { MapPin, Phone, Mail } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import {
   Accordion,
@@ -30,6 +27,9 @@ import {
 } from "@/components/ui/accordion"
 
 export default function Contact() {
+  const whatsappHref =
+    "https://api.whatsapp.com/send/?phone=%2B628211663798&text=Halo,%20saya%20ingin%20memesan%20layanan%20atau%20membutuhkan%20bantuan%20ParentsCare";
+
   return (
     <div className="container py-8 md:py-12">
       {/* Hero Section */}
@@ -43,7 +43,7 @@ export default function Contact() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 19.5a7.5 7.5 0 1115 0v.75A2.25 2.25 0 0117.25 22.5h-10.5A2.25 2.25 0 014.5 20.25v-.75z" />
           </svg>
           <span className="text-base text-blue-800 font-medium">
-            Anda juga dapat <span className="font-semibold text-blue-700">memesan layanan kami</span> dengan menginstal <a href="https://play.google.com/store/apps/details?id=com.iftxstudio.parentscare" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600 transition-colors">aplikasi mobile kami</a> atau dengan menghubungi tim layanan pelanggan kami secara langsung.
+            Anda dapat <span className="font-semibold text-blue-700">memesan layanan kami</span> dan menghubungi customer support melalui <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600 transition-colors">WhatsApp</a>. Email tersedia untuk pertanyaan non-mendesak.
           </span>
         </div>
       </div>
@@ -62,7 +62,9 @@ export default function Contact() {
                   <Mail className="mt-1 h-5 w-5 text-pink" />
                   <div>
                     <p className="font-medium">Email Kami</p>
-                    <p className="text-sm text-muted-foreground">ptparentscareindonesia@gmail.com</p>
+                    <a href="mailto:ptparentscareindonesia@gmail.com" className="text-sm text-muted-foreground hover:text-pink hover:underline">
+                      ptparentscareindonesia@gmail.com
+                    </a>
                     <p className="text-sm text-muted-foreground">Waktu respons: dalam 24 jam</p>
                   </div>
                 </div>
@@ -70,7 +72,9 @@ export default function Contact() {
                   <Phone className="mt-1 h-5 w-5 text-pink" />
                   <div>
                     <p className="font-medium">Pesan Kami di Whatsapp</p>
-                    <p className="text-sm text-muted-foreground">+62 821-1663-798</p>                  
+                    <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-pink hover:underline">
+                      +62 821-1663-798
+                    </a>
                     <p className="text-sm text-muted-foreground">Waktu respons: dalam 24 jam</p>
                   </div>
                 </div>
@@ -131,7 +135,9 @@ export default function Contact() {
                 <Phone className="h-5 w-5 text-red" />
                 <div>
                   <p className="font-medium">Hotline Darurat</p>
-                  <p className="text-sm text-muted-foreground">+62 821-1663-798</p>
+                  <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-red hover:underline">
+                    +62 821-1663-798
+                  </a>
                   <p className="text-sm text-muted-foreground">Tersedia 24/7 untuk kebutuhan perawatan mendesak</p>
                 </div>
               </div>
@@ -151,7 +157,7 @@ export default function Contact() {
             {
               question: "Bagaimana cara saya memesan pengasuh?",
               answer:
-                "Anda dapat memesan pengasuh dengan menghubungi tim dukungan pelanggan kami secara langsung atau dengan menginstal aplikasi mobile kami, di sana Anda dapat membuat akun, menjelajahi pengasuh yang tersedia, dan memilih yang paling sesuai dengan kebutuhan Anda. Kemudian, Anda dapat meminta pemesanan melalui platform kami.",
+                "Anda dapat memesan pengasuh dengan menghubungi tim dukungan pelanggan kami melalui WhatsApp. Tim kami akan mencatat kebutuhan, membagikan kandidat yang sesuai, dan membantu menjadwalkan interview online atau offline.",
             },
             {
               question: "Apa langkah keselamatan yang Anda miliki?",
@@ -180,12 +186,14 @@ export default function Contact() {
       </div>
 
       {/* CTA Section */}
-      <div className=" mt-12 rounded-lg text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-500 via-red-500 to-blue-500 bg-clip-text text-transparent p-8 text-center text-white">
+      <div className="mt-12 rounded-lg bg-slate-950 p-8 text-center text-white shadow-sm">
         <h2 className="mb-4 text-2xl font-bold">Siap untuk Memulai?</h2>
-        <p className="mb-6 ">Bergabunglah dengan ribuan orang tua yang puas yang mempercayai ParentsCare untuk kebutuhan perawatan anak mereka.</p>
+        <p className="mx-auto mb-6 max-w-2xl text-base text-slate-200">
+          Hubungi tim kami melalui WhatsApp untuk pemesanan layanan, dukungan pelanggan, atau pertanyaan mendesak.
+        </p>
         <div className="flex justify-center">
-          <a href="https://api.whatsapp.com/send/?phone=%2B8801883399933&text=Hello,%20I%20wanted%20to%20know%20about%20your%20service&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
-            <Button size="sm" className="border text-white hover:bg-pink-accent flex items-center space-x-2">
+          <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+            <Button size="sm" className="border bg-white text-slate-950 hover:bg-slate-100 flex items-center space-x-2">
               <img src="https://www.svgrepo.com/show/38250/whatsapp.svg" alt="WhatsApp" width={20} height={20} />
               <span>WhatsApp</span>
             </Button>

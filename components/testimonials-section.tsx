@@ -38,18 +38,24 @@ const testimonials = [
   }
 
   return (
-    <section id="testimonials" className="py-20 relative scroll-mt-20">
+    <section id="testimonials" className="py-20 relative scroll-mt-20 bg-gradient-to-br from-pink-50 via-white to-blue-50">
   <div className="container mx-auto px-4">
     <div className="text-center mb-16">
-      <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4">
+      <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
         Apa Kata{" "}
         <span className="text-pink">Pelanggan Kami</span>
       </h2>
 
-      <p className="text-xl text-white max-w-2xl mx-auto">
+      <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
         Kisah sukses nyata dari orang-orang yang menemukan ketenangan pikiran
         dengan layanan perawatan kami
       </p>
+      
+      <div className="inline-block bg-blue-50 border border-blue-200 rounded-lg px-4 py-2">
+        <p className="text-sm text-blue-700">
+          <span className="font-semibold">Catatan:</span> Testimoni berikut adalah dari pelanggan setia kami di Bangladesh yang telah merasakan keunggulan layanan Parents Care sejak 2020. Pengalaman terbukti ini menunjukkan komitmen kami terhadap kualitas layanan perawatan profesional.
+        </p>
+      </div>
     </div>
 
     {/* User Avatars */}
@@ -74,7 +80,7 @@ const testimonials = [
 
     {/* Testimonial Content */}
     <div className="max-w-4xl mx-auto">
-      <div className="bg-primary/90 backdrop-blur-sm rounded-2xl border border-pink/20 p-8 lg:p-12 relative shadow-2xl">
+      <div className="bg-gradient-to-br from-pink-500 to-red-500 backdrop-blur-sm rounded-2xl border border-pink-300/50 p-8 lg:p-12 relative shadow-2xl">
         
         {/* Navigation Arrows */}
         <button
@@ -121,7 +127,7 @@ const testimonials = [
               {testimonials[currentTestimonial].name}
             </h4>
 
-            <p className="text-pink">
+            <p className="text-white">
               {testimonials[currentTestimonial].role}
             </p>
           </div>

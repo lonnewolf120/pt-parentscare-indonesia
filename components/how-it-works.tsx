@@ -6,37 +6,42 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { UserPlus, Search, Calendar, Heart, ArrowRight, CheckCircle, Star, Shield } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+import { createWhatsAppHref } from "@/lib/service-pricing"
 
 const steps = [
   {
     step: "01",
-    title: "Buat Profil Anda",
-    description: "Daftar dan beri tahu kami tentang kebutuhan unik keluarga Anda, preferensi, dan persyaratan.",
+    title: "Ceritakan Kebutuhan Anda",
+    description: "Hubungi kami melalui WhatsApp dan beri tahu kebutuhan keluarga, preferensi, jadwal, dan persyaratan.",
     icon: UserPlus,
     color: "pink",
     gradient: "from-pink-500 to-pink-600",
     details: ["Profil keluarga lengkap", "Atur preferensi perawatan", "Tentukan persyaratan"],
     bgPattern: "dots",
+    image: "/step-1-profile.png",
   },
   {
     step: "02",
-    title: "Jelajahi & Cocokkan",
-    description: "Jelajahi pengasuh terverifikasi kami, baca ulasan, dan temukan kecocokan sempurna untuk keluarga Anda.",
+    title: "Kami Cocokkan Kandidat",
+    description: "Tim kami membagikan profil caregiver, perawat, atau nanny yang sesuai untuk keluarga Anda.",
     icon: Search,
     color: "blue",
     gradient: "from-blue-500 to-blue-600",
     details: ["Lihat profil pengasuh", "Baca ulasan terverifikasi", "Periksa ketersediaan"],
     bgPattern: "grid",
+    image: "/step-2-browse.png",
   },
   {
     step: "03",
-    title: "Pesan & Jadwalkan",
-    description: "Pilih pengasuh pilihan Anda, pilih tanggal dan waktu, kemudian lakukan pembayaran aman.",
+    title: "Interview & Jadwalkan",
+    description: "Pilih kandidat, lakukan interview online/offline, lalu tetapkan jadwal mulai kerja.",
     icon: Calendar,
     color: "red",
     gradient: "from-red-500 to-red-600",
-    details: ["Jadwal fleksibel", "Pembayaran aman", "Konfirmasi instan"],
+    details: ["Jadwal fleksibel", "Interview kandidat", "Konfirmasi via WhatsApp"],
     bgPattern: "waves",
+    image: "/step-3-booking.png",
   },
   {
     step: "04",
@@ -47,6 +52,7 @@ const steps = [
     gradient: "from-pink-500 via-red-500 to-blue-500",
     details: ["Perawatan profesional", "Update real-time", "Dukungan 24/7"],
     bgPattern: "circles",
+    image: "/step-4-peace.png",
   },
 ]
 
@@ -69,6 +75,10 @@ const benefits = [
 ]
 
 export default function HowItWorks() {
+  const whatsappHref = createWhatsAppHref(
+    "Halo, saya ingin mulai mencari caregiver/nanny/perawat ParentsCare.",
+  )
+
   const sectionRef = useRef(null)
   const titleRef = useRef(null)
   const stepsRef = useRef(null)
@@ -249,7 +259,7 @@ export default function HowItWorks() {
                         <p className="text-gray-600 mb-4 leading-relaxed">{step.description}</p>
 
                         {/* Details */}
-                        <ul className="space-y-2">
+                        <ul className="space-y-2 mb-6">
                           {step.details.map((detail, detailIndex) => (
                             <motion.li
                               key={detailIndex}
@@ -263,6 +273,23 @@ export default function HowItWorks() {
                             </motion.li>
                           ))}
                         </ul>
+
+                        {/* Step Image */}
+                        {step.image && (
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={isStepsInView ? { opacity: 1, scale: 1 } : {}}
+                            transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
+                            className="relative h-48 rounded-lg overflow-hidden mt-4 shadow-md group-hover:shadow-lg transition-shadow"
+                          >
+                            <Image
+                              src={step.image}
+                              alt={step.title}
+                              fill
+                              className="object-cover"
+                            />
+                          </motion.div>
+                        )}
                       </div>
                     </div>
                   </CardContent>
@@ -343,7 +370,7 @@ export default function HowItWorks() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link href="/register">
+                  <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
                       className="bg-white text-pink hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg cursor-hover"
@@ -351,7 +378,7 @@ export default function HowItWorks() {
                       Mulai Perjalanan Anda
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
-                  </Link>
+                  </a>
                 </motion.div>
 
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
