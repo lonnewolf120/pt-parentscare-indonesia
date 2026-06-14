@@ -29,22 +29,22 @@ import {
 
 const accentStyles = {
   pink: {
-    text: "text-pink-600",
-    bg: "bg-pink-50",
-    border: "border-pink-200",
-    solid: "bg-pink-600 hover:bg-pink-700",
+    text: "text-[#C9202B]",
+    bg: "bg-[#FBE7EA]",
+    border: "border-[#F6D4D9]",
+    solid: "bg-[#C9202B] hover:bg-[#A91520]",
   },
   red: {
-    text: "text-red-600",
-    bg: "bg-red-50",
-    border: "border-red-200",
-    solid: "bg-red-600 hover:bg-red-700",
+    text: "text-[#C9202B]",
+    bg: "bg-[#FBE7EA]",
+    border: "border-[#F6D4D9]",
+    solid: "bg-[#C9202B] hover:bg-[#A91520]",
   },
   blue: {
-    text: "text-blue-600",
-    bg: "bg-blue-50",
-    border: "border-blue-200",
-    solid: "bg-blue-600 hover:bg-blue-700",
+    text: "text-[#C9202B]",
+    bg: "bg-[#FBE7EA]",
+    border: "border-[#F6D4D9]",
+    solid: "bg-[#C9202B] hover:bg-[#A91520]",
   },
 }
 
@@ -82,32 +82,32 @@ export default function Services() {
   const ActiveIcon = serviceIcons[active.id as keyof typeof serviceIcons]
 
   return (
-    <main className="bg-white text-gray-950">
-      <section className="relative overflow-hidden bg-slate-950">
+    <main className="bg-[#FFFDF9] text-[#18181B]">
+      <section className="relative overflow-hidden bg-[#18181B]">
         <Image
-          src="/nurse.jpg"
+          src="/images/caregiver.jpg"
           alt="Layanan caregiver, perawat, dan nanny ParentsCare Indonesia"
           fill
           priority
           className="object-cover opacity-35"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#18181B] via-[#18181B]/90 to-[#18181B]/50" />
         <div className="container relative z-10 py-20 text-white md:py-28">
           <div className="max-w-4xl">
-            <span className="inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-semibold ring-1 ring-white/15">
+            <span className="inline-flex rounded-full bg-[#FFFDF9]/10 px-4 py-2 text-sm font-semibold ring-1 ring-white/15">
               Layanan ParentsCare Indonesia
             </span>
             <h1 className="mt-6 text-4xl font-bold tracking-tight md:text-6xl">
               Pilih layanan perawatan yang tepat sebelum memilih orangnya.
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-200 md:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-8 text-white/90 md:text-lg">
               Setiap keluarga memiliki kebutuhan berbeda. Gunakan halaman ini
               untuk membandingkan pengasuh, perawat, dan nanny berdasarkan kondisi,
               jadwal, serta kisaran harga. Booking dan konsultasi dilakukan melalui WhatsApp.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="w-full bg-white text-slate-950 hover:bg-slate-100 sm:w-auto">
+                <Button size="lg" className="w-full bg-[#C9202B] text-white hover:bg-[#A91520] sm:w-auto">
                   <MessageCircle className="h-5 w-5" />
                   Konsultasi paket
                 </Button>
@@ -116,7 +116,7 @@ export default function Services() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full border-white/70 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto"
+                  className="w-full border-white/70 bg-transparent text-white hover:bg-[#FFFDF9]/10 hover:text-white sm:w-auto"
                 >
                   Career untuk kandidat
                 </Button>
@@ -126,16 +126,16 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="border-b border-gray-100 bg-gray-50 py-6">
+      <section className="border-b border-[#E7E5E4] bg-[#FFF4EC] py-6">
         <div className="container grid gap-4 md:grid-cols-3">
           {[
             ["6 hari kerja", "1 hari libur setiap minggu"],
             ["Rp 300.000", "biaya transport tetap"],
             ["WhatsApp", "booking dan customer support"],
           ].map(([value, label]) => (
-            <div key={value} className="rounded-lg border border-gray-100 bg-white p-5 shadow-sm">
-              <div className="text-2xl font-bold text-gray-950">{value}</div>
-              <div className="mt-1 text-sm text-gray-600">{label}</div>
+            <div key={value} className="rounded-lg border border-[#E7E5E4] bg-white p-5 shadow-sm">
+              <div className="text-2xl font-bold text-[#18181B]">{value}</div>
+              <div className="mt-1 text-sm text-[#6B6666]">{label}</div>
             </div>
           ))}
         </div>
@@ -145,14 +145,14 @@ export default function Services() {
         <div className="container">
           <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
-              <span className="inline-flex rounded-full bg-pink-50 px-4 py-2 text-sm font-semibold text-pink-700">
+              <span className="inline-flex rounded-full bg-[#FBE7EA] px-4 py-2 text-sm font-semibold text-[#A91520]">
                 Bandingkan layanan
               </span>
               <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-5xl">
                 Mulai dari kebutuhan keluarga, bukan dari daftar nama.
               </h2>
             </div>
-            <p className="max-w-md text-sm leading-6 text-gray-600">
+            <p className="max-w-md text-sm leading-6 text-[#6B6666]">
               Pilih layanan untuk melihat cakupan kerja, kondisi yang cocok,
               dan paket harga klien.
             </p>
@@ -171,14 +171,14 @@ export default function Services() {
                   className={`rounded-xl border p-5 text-left transition ${
                     selected
                       ? `${itemStyles.border} ${itemStyles.bg} shadow-sm`
-                      : "border-gray-100 bg-white hover:border-gray-200 hover:bg-gray-50"
+                      : "border-[#E7E5E4] bg-white hover:border-[#E7E5E4] hover:bg-[#FFF4EC]"
                   }`}
                 >
                   <div className={`mb-4 flex h-11 w-11 items-center justify-center rounded-lg ${itemStyles.bg} ${itemStyles.text}`}>
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="text-xl font-bold">{service.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-gray-600">{service.description}</p>
+                  <p className="mt-2 text-sm leading-6 text-[#6B6666]">{service.description}</p>
                 </button>
               )
             })}
@@ -192,7 +192,7 @@ export default function Services() {
             className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]"
           >
             <div className="space-y-6">
-              <Card className="overflow-hidden border-gray-100 shadow-sm">
+              <Card className="overflow-hidden border-[#E7E5E4] shadow-sm">
                 <div className="relative aspect-[4/3]">
                   <Image src={active.image} alt={active.title} fill className="object-cover" />
                 </div>
@@ -203,12 +203,12 @@ export default function Services() {
                     </div>
                     <div>
                       <h2 className="text-2xl font-bold">{active.title}</h2>
-                      <p className="text-sm text-gray-500">{active.task}</p>
+                      <p className="text-sm text-[#6B6666]">{active.task}</p>
                     </div>
                   </div>
                   <div className="grid gap-3">
                     {active.features.map((feature) => (
-                      <div key={feature} className="flex gap-3 text-sm text-gray-700">
+                      <div key={feature} className="flex gap-3 text-sm text-[#2B2B2F]">
                         <CheckCircle2 className={`mt-0.5 h-4 w-4 shrink-0 ${styles.text}`} />
                         <span>{feature}</span>
                       </div>
@@ -217,13 +217,13 @@ export default function Services() {
                 </CardContent>
               </Card>
 
-              <Card className="border-gray-100 bg-gray-50 shadow-sm">
+              <Card className="border-[#E7E5E4] bg-[#FFF4EC] shadow-sm">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold">Cocok untuk kondisi seperti ini</h3>
                   <div className="mt-4 grid gap-3">
                     {serviceFit[active.id as keyof typeof serviceFit].map((item) => (
-                      <div key={item} className="flex gap-3 rounded-lg bg-white p-3 text-sm text-gray-700">
-                        <Users className="mt-0.5 h-4 w-4 shrink-0 text-gray-500" />
+                      <div key={item} className="flex gap-3 rounded-lg bg-white p-3 text-sm text-[#2B2B2F]">
+                        <Users className="mt-0.5 h-4 w-4 shrink-0 text-[#6B6666]" />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -233,11 +233,11 @@ export default function Services() {
             </div>
 
             <div>
-              <Card className="border-gray-100 shadow-sm">
+              <Card className="border-[#E7E5E4] shadow-sm">
                 <CardContent className="p-0">
-                  <div className="border-b border-gray-100 p-6">
+                  <div className="border-b border-[#E7E5E4] p-6">
                     <h3 className="text-2xl font-bold">Paket harga {active.title}</h3>
-                    <p className="mt-2 text-sm text-gray-600">
+                    <p className="mt-2 text-sm text-[#6B6666]">
                       Harga berikut adalah estimasi biaya klien. Tim kami akan
                       mengonfirmasi kebutuhan, lokasi, dan ketersediaan kandidat.
                     </p>
@@ -251,22 +251,22 @@ export default function Services() {
                             href={whatsappHref}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block p-5 transition hover:bg-blue-50/40"
+                            className="block p-5 transition hover:bg-[#FBE7EA]/50"
                           >
                             <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                               <div>
-                                <div className="text-sm font-semibold text-blue-600">{pkg.childAge}</div>
-                                <h4 className="mt-1 font-bold text-gray-950">{pkg.serviceTime}</h4>
-                                <div className="mt-2 text-xs text-gray-500">Harga untuk 1 anak dan 2 anak</div>
+                                <div className="text-sm font-semibold text-[#C9202B]">{pkg.childAge}</div>
+                                <h4 className="mt-1 font-bold text-[#18181B]">{pkg.serviceTime}</h4>
+                                <div className="mt-2 text-xs text-[#6B6666]">Harga untuk 1 anak dan 2 anak</div>
                               </div>
                               <div className="grid gap-2 text-sm md:min-w-64">
-                                <div className="flex justify-between gap-4 rounded-lg bg-gray-50 px-3 py-2">
-                                  <span className="text-gray-500">1 anak</span>
-                                  <span className="font-bold text-blue-600">{pkg.clientPriceOneChild}</span>
+                                <div className="flex justify-between gap-4 rounded-lg bg-[#FFF4EC] px-3 py-2">
+                                  <span className="text-[#6B6666]">1 anak</span>
+                                  <span className="font-bold text-[#C9202B]">{pkg.clientPriceOneChild}</span>
                                 </div>
-                                <div className="flex justify-between gap-4 rounded-lg bg-gray-50 px-3 py-2">
-                                  <span className="text-gray-500">2 anak</span>
-                                  <span className="font-bold text-blue-600">{pkg.clientPriceTwoChildren}</span>
+                                <div className="flex justify-between gap-4 rounded-lg bg-[#FFF4EC] px-3 py-2">
+                                  <span className="text-[#6B6666]">2 anak</span>
+                                  <span className="font-bold text-[#C9202B]">{pkg.clientPriceTwoChildren}</span>
                                 </div>
                               </div>
                             </div>
@@ -280,12 +280,12 @@ export default function Services() {
                               href={whatsappHref}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="block p-5 transition hover:bg-gray-50"
+                              className="block p-5 transition hover:bg-[#FFF4EC]"
                             >
                               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                                 <div>
-                                  <h4 className="font-bold text-gray-950">{pkg.serviceTime}</h4>
-                                  <p className="mt-1 text-sm text-gray-500">{pkg.duration}</p>
+                                  <h4 className="font-bold text-[#18181B]">{pkg.serviceTime}</h4>
+                                  <p className="mt-1 text-sm text-[#6B6666]">{pkg.duration}</p>
                                 </div>
                                 <div className={`text-lg font-bold ${styles.text}`}>{pkg.clientPrice}</div>
                               </div>
@@ -293,7 +293,7 @@ export default function Services() {
                           ))}
                   </div>
 
-                  <div className="border-t border-gray-100 p-6">
+                  <div className="border-t border-[#E7E5E4] p-6">
                     <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
                       <Button className={`w-full text-white ${styles.solid}`}>
                         <MessageCircle className="h-4 w-4" />
@@ -308,18 +308,18 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-16">
+      <section className="bg-[#FFF4EC] py-16">
         <div className="container grid gap-6 md:grid-cols-2">
-          <Card className="border-gray-100 shadow-sm">
+          <Card className="border-[#E7E5E4] shadow-sm">
             <CardContent className="p-6">
               <div className="mb-4 flex items-center gap-3">
-                <Clock className="h-5 w-5 text-pink-600" />
+                <Clock className="h-5 w-5 text-[#C9202B]" />
                 <h3 className="text-xl font-bold">Ketentuan operasional</h3>
               </div>
-              <ul className="space-y-3 text-sm leading-6 text-gray-700">
+              <ul className="space-y-3 text-sm leading-6 text-[#2B2B2F]">
                 {serviceNotes.map((note) => (
                   <li key={note} className="flex gap-3">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0F766E]" />
                     <span>{note}</span>
                   </li>
                 ))}
@@ -327,16 +327,16 @@ export default function Services() {
             </CardContent>
           </Card>
 
-          <Card className="border-gray-100 shadow-sm">
+          <Card className="border-[#E7E5E4] shadow-sm">
             <CardContent className="p-6">
               <div className="mb-4 flex items-center gap-3">
-                <FileCheck2 className="h-5 w-5 text-blue-600" />
+                <FileCheck2 className="h-5 w-5 text-[#C9202B]" />
                 <h3 className="text-xl font-bold">Yang kami bantu siapkan</h3>
               </div>
-              <ul className="space-y-3 text-sm leading-6 text-gray-700">
+              <ul className="space-y-3 text-sm leading-6 text-[#2B2B2F]">
                 {serviceAdvantages.map((advantage) => (
                   <li key={advantage} className="flex gap-3">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0F766E]" />
                     <span>{advantage}</span>
                   </li>
                 ))}
@@ -346,18 +346,18 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="bg-slate-950 py-20 text-white">
+      <section className="bg-[#18181B] py-20 text-white">
         <div className="container text-center">
           <h2 className="text-3xl font-bold tracking-tight md:text-5xl">
             Masih ragu memilih layanan?
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-300">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-white/75">
             Kirim kondisi keluarga Anda. Tim kami akan menjelaskan apakah Anda
             membutuhkan pengasuh, perawat, atau nanny, beserta kisaran paket yang sesuai.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="w-full bg-white text-slate-950 hover:bg-slate-100 sm:w-auto">
+              <Button size="lg" className="w-full bg-[#C9202B] text-white hover:bg-[#A91520] sm:w-auto">
                 <MessageCircle className="h-5 w-5" />
                 Tanya via WhatsApp
               </Button>
@@ -366,7 +366,7 @@ export default function Services() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full border-white/70 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto"
+                className="w-full border-white/70 bg-transparent text-white hover:bg-[#FFFDF9]/10 hover:text-white sm:w-auto"
               >
                 Kontak lain
                 <ArrowRight className="h-5 w-5" />

@@ -38,7 +38,7 @@ const testimonials = [
   }
 
   return (
-    <section id="testimonials" className="py-20 relative scroll-mt-20 bg-gradient-to-br from-pink-50 via-white to-blue-50">
+    <section id="testimonials" className="py-20 relative scroll-mt-20 bg-[#FFF4EC]">
   <div className="container mx-auto px-4">
     <div className="text-center mb-16">
       <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
@@ -51,8 +51,8 @@ const testimonials = [
         dengan layanan perawatan kami
       </p>
       
-      <div className="inline-block bg-blue-50 border border-blue-200 rounded-lg px-4 py-2">
-        <p className="text-sm text-blue-700">
+      <div className="inline-block bg-white border border-[#E7E5E4] rounded-lg px-4 py-2">
+        <p className="text-sm text-[#6B6666]">
           <span className="font-semibold">Catatan:</span> Testimoni berikut adalah dari pelanggan setia kami di Bangladesh yang telah merasakan keunggulan layanan Parents Care sejak 2020. Pengalaman terbukti ini menunjukkan komitmen kami terhadap kualitas layanan perawatan profesional.
         </p>
       </div>
@@ -80,7 +80,7 @@ const testimonials = [
 
     {/* Testimonial Content */}
     <div className="max-w-4xl mx-auto">
-      <div className="bg-gradient-to-br from-pink-500 to-red-500 backdrop-blur-sm rounded-2xl border border-pink-300/50 p-8 lg:p-12 relative shadow-2xl">
+      <div className="bg-[#18181B] backdrop-blur-sm rounded-xl border border-[#2B2B2F] p-8 lg:p-12 relative shadow-2xl">
         
         {/* Navigation Arrows */}
         <button

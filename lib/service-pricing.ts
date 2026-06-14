@@ -33,8 +33,7 @@ export const standardServices = [
     description: "Perawatan lansia dan pasien di rumah untuk kebutuhan non-medis sehari-hari.",
     task: "Perawatan lansia/pasien di rumah",
     accent: "pink" as ServiceAccent,
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-04-18%20at%207.25.46%20PM%20%283%29-MEO6yAMY7LLvmmvjK4DcJNYibxFvB9.jpeg",
+    image: "/images/caregiver_service_1.jpeg",
     features: [
       "Pendampingan pasien dan lansia",
       "Bantuan mandi, makan, dan aktivitas harian",
@@ -76,8 +75,7 @@ export const standardServices = [
     description: "Perawatan terampil untuk pasien dengan kebutuhan lebih kompleks di rumah.",
     task: "Perawatan pasien terampil",
     accent: "red" as ServiceAccent,
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-04-18%20at%207.25.46%20PM%20%281%29-RU7gjjXGl3hmZ3H1XZOUbjFg9orCy0.jpeg",
+    image: "/images/caregiver_service_3.jpeg",
     features: [
       "Cek tanda vital dan tekanan darah",
       "Cek diabetes dan pemberian insulin",
@@ -121,8 +119,7 @@ export const nannyService = {
   description: "Perawatan bayi dan anak dengan jadwal fleksibel untuk keluarga.",
   task: "Perawatan bayi dan anak",
   accent: "blue" as ServiceAccent,
-  image:
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-04-18%20at%207.25.46%20PM%20%282%29-9tfIPidPnypHt3HMZ09YSo807QAEFv.jpeg",
+  image: "/images/caregiver_service_2.jpeg",
   features: [
     "Memberi makan dan mendampingi anak",
     "Memasak makanan anak",

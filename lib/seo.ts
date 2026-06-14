@@ -5,7 +5,7 @@ export const siteConfig = {
   title: 'ParentsCare Indonesia - Jasa Pengasuh, Perawat Home Care & Nanny di Jakarta',
   description: 'ParentsCare Indonesia menyediakan jasa pengasuh lansia, perawat home care, dan nanny profesional di Jakarta dan Jabodetabek. Konsultasi, pencocokan kandidat, interview, dan booking layanan dilakukan melalui WhatsApp.',
   url: 'https://www.parentscareindonesia.xyz',
-  ogImage: 'https://www.parentscareindonesia.xyz/feature-verified.png',
+  ogImage: 'https://www.parentscareindonesia.xyz/images/caregiver_service_1.jpeg',
   keywords: [
     // Primary Keywords - Pengasuh
     'layanan pengasuh indonesia',

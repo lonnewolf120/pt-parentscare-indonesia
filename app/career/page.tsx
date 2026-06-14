@@ -37,8 +37,8 @@ export default function CareerPage() {
   )
 
   return (
-    <main className="bg-white">
-      <section className="bg-slate-950 px-4 py-20 text-white md:py-28">
+    <main className="bg-[#FFFDF9]">
+      <section className="bg-[#18181B] px-4 py-20 text-white md:py-28">
         <div className="container max-w-4xl text-center">
           <span className="inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/15">
             Career
@@ -46,14 +46,14 @@ export default function CareerPage() {
           <h1 className="mt-5 text-4xl font-bold tracking-tight md:text-6xl">
             Bergabung sebagai Caregiver, Perawat, atau Nanny
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-200 md:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
             ParentsCare Indonesia membuka kesempatan untuk tenaga perawatan yang
             sabar, teliti, bertanggung jawab, dan siap membantu keluarga dengan
             layanan profesional.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a href={applicationHref} target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="w-full bg-white text-slate-950 hover:bg-slate-100 sm:w-auto">
+              <Button size="lg" className="w-full bg-[#C9202B] text-white hover:bg-[#A91520] sm:w-auto">
                 <MessageCircle className="h-5 w-5" />
                 Lamar via WhatsApp
               </Button>
@@ -89,10 +89,10 @@ export default function CareerPage() {
               const Icon = serviceIcons[service.id as keyof typeof serviceIcons]
 
               return (
-                <Card key={service.id} className="border-gray-200 shadow-sm">
+                <Card key={service.id} className="border-[#E7E5E4] bg-white shadow-sm">
                   <CardContent className="p-6">
                     <div className="mb-5 flex items-center gap-3">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-pink-50 text-pink-600">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#FBE7EA] text-[#C9202B]">
                         <Icon className="h-5 w-5" />
                       </div>
                       <div>
@@ -108,7 +108,7 @@ export default function CareerPage() {
                               <p className="font-semibold text-gray-900">{pkg.serviceTime}</p>
                               <p className="text-xs text-gray-500">{pkg.duration}</p>
                             </div>
-                            <p className="text-sm font-bold text-pink-600">{pkg.caregiverSalary}</p>
+                            <p className="text-sm font-bold text-[#C9202B]">{pkg.caregiverSalary}</p>
                           </div>
                         </div>
                       ))}
@@ -118,10 +118,10 @@ export default function CareerPage() {
               )
             })}
 
-            <Card className="border-gray-200 shadow-sm lg:col-span-2">
+            <Card className="border-[#E7E5E4] bg-white shadow-sm lg:col-span-2">
               <CardContent className="p-6">
                 <div className="mb-5 flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#FBE7EA] text-[#C9202B]">
                     <Baby className="h-5 w-5" />
                   </div>
                   <div>
@@ -138,11 +138,11 @@ export default function CareerPage() {
                       <div className="mt-3 grid gap-2 text-sm">
                         <div className="flex justify-between gap-4">
                           <span className="text-gray-500">1 anak</span>
-                          <span className="font-bold text-blue-600">{pkg.salaryOneChild}</span>
+                          <span className="font-bold text-[#C9202B]">{pkg.salaryOneChild}</span>
                         </div>
                         <div className="flex justify-between gap-4">
                           <span className="text-gray-500">2 anak</span>
-                          <span className="font-bold text-blue-600">{pkg.salaryTwoChildren}</span>
+                          <span className="font-bold text-[#C9202B]">{pkg.salaryTwoChildren}</span>
                         </div>
                       </div>
                     </div>
@@ -154,7 +154,7 @@ export default function CareerPage() {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-16">
+      <section className="bg-[#FFF4EC] py-16">
         <div className="container grid gap-8 lg:grid-cols-[1fr_1.1fr]">
           <div>
             <h2 className="text-3xl font-bold text-gray-950">Kriteria & Alur Pendaftaran</h2>
@@ -172,7 +172,7 @@ export default function CareerPage() {
                 "Bersedia mengikuti wawancara online atau offline.",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0F766E]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -182,7 +182,7 @@ export default function CareerPage() {
           <Card className="border-gray-200 bg-white shadow-sm">
             <CardContent className="p-6">
               <h3 className="text-xl font-bold text-gray-950">Format Job Circular</h3>
-              <div className="mt-4 rounded-xl bg-slate-950 p-5 text-sm leading-relaxed text-slate-100">
+              <div className="mt-4 rounded-xl bg-[#18181B] p-5 text-sm leading-relaxed text-white/85">
                 <p>Post: Caregiver berpengalaman dan terampil dibutuhkan.</p>
                 <p>Patient type: Pasien normal atau lansia.</p>
                 <p>Must be patient and calm.</p>
@@ -202,7 +202,7 @@ export default function CareerPage() {
                 <p>Contact: WhatsApp +62 821-1663-798</p>
               </div>
               <a href={applicationHref} target="_blank" rel="noopener noreferrer" className="mt-5 block">
-                <Button className="w-full bg-pink-600 text-white hover:bg-pink-700">
+                <Button className="w-full bg-[#C9202B] text-white hover:bg-[#A91520]">
                   Lamar via WhatsApp
                 </Button>
               </a>

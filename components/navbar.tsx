@@ -20,7 +20,7 @@ export default function Navbar() {
   )
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-[#E7E5E4] bg-[#FFFDF9]/95 backdrop-blur-md">
       <div className="container flex h-20 items-center justify-between gap-4 px-4 md:px-6">
         <Link href="/" className="flex shrink-0 items-center gap-3">
           <Image
@@ -31,8 +31,8 @@ export default function Navbar() {
             className="h-11 w-11 rounded-lg object-cover"
           />
           <div className="hidden sm:block">
-            <p className="text-base font-bold leading-tight text-gray-950">ParentsCare</p>
-            <p className="text-xs font-medium text-gray-500">Indonesia Home Care</p>
+            <p className="text-base font-bold leading-tight text-[#18181B]">ParentsCare</p>
+            <p className="text-xs font-medium text-[#6B6666]">Indonesia Home Care</p>
           </div>
         </Link>
 
@@ -41,7 +41,7 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-semibold text-gray-700 transition hover:text-pink-600"
+              className="text-sm font-semibold text-[#2B2B2F] transition hover:text-pink-600"
             >
               {item.label}
             </Link>
@@ -50,7 +50,7 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-slate-950 text-white hover:bg-slate-800">
+            <Button className="bg-[#C9202B] text-white hover:bg-[#A91520]">
               <MessageCircle className="h-4 w-4" />
               Konsultasi WhatsApp
             </Button>
@@ -59,7 +59,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2 md:hidden">
           <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
-            <Button size="icon" variant="outline" className="border-gray-200 text-pink-600">
+            <Button size="icon" variant="outline" className="border-[#E7E5E4] text-pink-600">
               <MessageCircle className="h-5 w-5" />
               <span className="sr-only">Konsultasi WhatsApp</span>
             </Button>
@@ -67,7 +67,7 @@ export default function Navbar() {
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
-                <Menu className="h-5 w-5 text-gray-800" />
+                <Menu className="h-5 w-5 text-[#2B2B2F]" />
                 <span className="sr-only">Buka menu</span>
               </Button>
             </SheetTrigger>
@@ -77,14 +77,14 @@ export default function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-base font-semibold text-gray-900 transition hover:text-pink-600"
+                    className="text-base font-semibold text-[#18181B] transition hover:text-pink-600"
                   >
                     {item.label}
                   </Link>
                 ))}
-                <div className="mt-4 border-t border-gray-100 pt-4">
+                <div className="mt-4 border-t border-[#E7E5E4] pt-4">
                   <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
-                    <Button className="w-full bg-slate-950 text-white hover:bg-slate-800">
+                    <Button className="w-full bg-[#C9202B] text-white hover:bg-[#A91520]">
                       <MessageCircle className="h-4 w-4" />
                       Konsultasi WhatsApp
                     </Button>

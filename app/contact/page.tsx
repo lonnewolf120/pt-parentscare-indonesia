@@ -38,12 +38,12 @@ export default function Contact() {
         <p className="mx-auto max-w-[600px] text-lg text-muted-foreground">
           Punya pertanyaan? Kami di sini untuk membantu. Hubungi kami melalui salah satu saluran di bawah ini.
         </p>
-        <div className="mx-auto max-w-[600px] mt-6 flex items-center gap-3 bg-blue-50 border border-blue-200 rounded-lg px-4 py-3 shadow-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#2563eb" className="w-6 h-6 flex-shrink-0">
+        <div className="mx-auto max-w-[600px] mt-6 flex items-center gap-3 bg-[#FBE7EA] border border-[#F6D4D9] rounded-lg px-4 py-3 shadow-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#C9202B" className="w-6 h-6 flex-shrink-0">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 19.5a7.5 7.5 0 1115 0v.75A2.25 2.25 0 0117.25 22.5h-10.5A2.25 2.25 0 014.5 20.25v-.75z" />
           </svg>
-          <span className="text-base text-blue-800 font-medium">
-            Anda dapat <span className="font-semibold text-blue-700">memesan layanan kami</span> dan menghubungi customer support melalui <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600 transition-colors">WhatsApp</a>. Email tersedia untuk pertanyaan non-mendesak.
+          <span className="text-base text-[#2B2B2F] font-medium">
+            Anda dapat <span className="font-semibold text-[#C9202B]">memesan layanan kami</span> dan menghubungi customer support melalui <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="underline hover:text-[#A91520] transition-colors">WhatsApp</a>. Email tersedia untuk pertanyaan non-mendesak.
           </span>
         </div>
       </div>
@@ -175,8 +175,8 @@ export default function Contact() {
                 "Anda dapat membatalkan pemesanan hingga 24 jam sebelum waktu yang dijadwalkan tanpa penalti apa pun. Untuk pembatalan dalam 24 jam, biaya kecil mungkin berlaku. Silakan lihat kebijakan pembatalan kami untuk lebih jelasnya.",
             },
           ].map((faq, index) => (
-            <AccordionItem value={`item-${index}`} key={index} className="border-b border-blue">
-              <AccordionTrigger><span className="text-blue">{faq.question}</span></AccordionTrigger>
+            <AccordionItem value={`item-${index}`} key={index} className="border-b border-[#E7E5E4]">
+              <AccordionTrigger><span className="text-[#18181B]">{faq.question}</span></AccordionTrigger>
               <AccordionContent>
                 <p className="text-muted-foreground">{faq.answer}</p>
               </AccordionContent>
@@ -186,14 +186,14 @@ export default function Contact() {
       </div>
 
       {/* CTA Section */}
-      <div className="mt-12 rounded-lg bg-slate-950 p-8 text-center text-white shadow-sm">
+      <div className="mt-12 rounded-lg bg-[#18181B] p-8 text-center text-white shadow-sm">
         <h2 className="mb-4 text-2xl font-bold">Siap untuk Memulai?</h2>
-        <p className="mx-auto mb-6 max-w-2xl text-base text-slate-200">
+        <p className="mx-auto mb-6 max-w-2xl text-base text-white/75">
           Hubungi tim kami melalui WhatsApp untuk pemesanan layanan, dukungan pelanggan, atau pertanyaan mendesak.
         </p>
         <div className="flex justify-center">
           <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
-            <Button size="sm" className="border bg-white text-slate-950 hover:bg-slate-100 flex items-center space-x-2">
+            <Button size="sm" className="border border-[#C9202B] bg-[#C9202B] text-white hover:bg-[#A91520] flex items-center space-x-2">
               <img src="https://www.svgrepo.com/show/38250/whatsapp.svg" alt="WhatsApp" width={20} height={20} />
               <span>WhatsApp</span>
             </Button>

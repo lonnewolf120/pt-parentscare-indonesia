@@ -44,20 +44,18 @@ export default function AboutContent() {
 
       {/* HERO SECTION */}
       <motion.section
-        className="relative overflow-hidden bg-gradient-to-br from-pink-600 via-rose-500 to-blue-700 px-4 pt-24 pb-32 md:pt-32 md:pb-40"
+        className="relative overflow-hidden bg-[#18181B] px-4 pt-24 pb-32 md:pt-32 md:pb-40"
         initial="initial"
         animate="animate"
         variants={staggerContainerVariants}
       >
-        <div className="absolute inset-0 opacity-15 pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,#18181B_0%,#2B2B2F_48%,#A91520_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#FFFDF9] to-transparent" />
 
         <div className="container relative mx-auto text-center z-10">
 
           <motion.div variants={fadeInVariants} className="mb-6 inline-block">
-            <span className="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-medium border border-white/30 shadow-sm flex items-center gap-2">
+            <span className="bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-medium border border-white/20 shadow-sm flex items-center gap-2 text-white">
               <SparklesIcon className="w-4 h-4 text-white font-bold" />
               Mentransformasi Layanan Perawatan di Indonesia
             </span>
@@ -73,7 +71,7 @@ export default function AboutContent() {
           </motion.h1>
 
           <motion.p
-            className="mx-auto max-w-2xl text-base md:text-lg text-pink-50 mb-8 leading-relaxed font-normal"
+            className="mx-auto max-w-2xl text-base md:text-lg text-white/85 mb-8 leading-relaxed font-normal"
             variants={fadeInVariants}
           >
             Dipercaya oleh ribuan keluarga di Indonesia.
@@ -92,7 +90,7 @@ export default function AboutContent() {
             >
               <Button
                 size="lg"
-                className="w-full rounded-full bg-white text-primary hover:bg-pink-50 hover:shadow-md transition-all duration-200 font-bold px-8 gap-2"
+                className="w-full rounded-full bg-[#C9202B] text-white hover:bg-[#A91520] hover:shadow-md transition-all duration-200 font-bold px-8 gap-2"
               >
                 <img src="/whatsapp.png" alt="WhatsApp" width={20} height={20} />
                 Hubungi via WhatsApp
@@ -115,7 +113,7 @@ export default function AboutContent() {
 
       {/* STATS SECTION */}
       <motion.section
-        className="relative z-20 mx-4 md:mx-auto max-w-5xl -mt-16 mb-20 bg-card rounded-2xl border border-border/50 shadow-md"
+        className="relative z-20 mx-4 md:mx-auto max-w-5xl -mt-16 mb-20 bg-white rounded-xl border border-[#E7E5E4] shadow-md"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.3 }}
@@ -130,7 +128,7 @@ export default function AboutContent() {
                 <motion.div
                   key={index}
                   variants={fadeInVariants}
-                  className="bg-gradient-to-r from-primary to-red bg-clip-text text-center flex flex-col items-center"
+                  className="text-center flex flex-col items-center"
                 >
                   <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -143,7 +141,7 @@ export default function AboutContent() {
                     </div>
                   </motion.div>
 
-                  <div className="text-2xl md:text-3xl font-bold mb-1 tracking-tight text-transparent">
+                  <div className="text-2xl md:text-3xl font-bold mb-1 tracking-tight text-[#C9202B]">
                     {stat.number}
                   </div>
 
@@ -177,9 +175,9 @@ export default function AboutContent() {
 
           <div className="grid md:grid-cols-3 gap-6">
             <motion.div variants={fadeInVariants}>
-              <Card className="h-full border-l-4 border-l-blue-500 rounded-2xl shadow-sm bg-blue-50/30">
+              <Card className="h-full border-l-4 border-l-[#C9202B] rounded-xl shadow-sm bg-white">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center mb-5 text-white font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-[#FBE7EA] flex items-center justify-center mb-5 text-[#C9202B] font-bold text-lg">
                     2020
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-foreground">Didirikan di Bangladesh</h3>
@@ -191,9 +189,9 @@ export default function AboutContent() {
             </motion.div>
 
             <motion.div variants={fadeInVariants}>
-              <Card className="h-full border-l-4 border-l-primary rounded-2xl shadow-sm bg-primary/5">
+              <Card className="h-full border-l-4 border-l-[#A91520] rounded-xl shadow-sm bg-white">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center mb-5 text-white font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-[#C9202B] flex items-center justify-center mb-5 text-white font-bold text-lg">
                     2K+
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-foreground">Melayani 2000+ Keluarga</h3>
@@ -205,9 +203,9 @@ export default function AboutContent() {
             </motion.div>
 
             <motion.div variants={fadeInVariants}>
-              <Card className="h-full border-l-4 border-l-green-500 rounded-2xl shadow-sm bg-green-50/30">
+              <Card className="h-full border-l-4 border-l-[#0F766E] rounded-xl shadow-sm bg-white">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center mb-5 text-white font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-[#E6F4F1] flex items-center justify-center mb-5 text-[#0F766E] font-bold text-lg">
                     2026
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-foreground">Ekspansi ke Indonesia</h3>
@@ -226,19 +224,19 @@ export default function AboutContent() {
               <p className="text-muted-foreground">Didukung oleh investor terkemuka dan pengakuan industri</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
-              <Card className="border border-border/50 rounded-2xl shadow-sm bg-card">
+              <Card className="border border-[#E7E5E4] rounded-xl shadow-sm bg-white">
                 <CardContent className="p-6">
                   <h4 className="font-bold text-foreground mb-2">BYLC Ventures</h4>
                   <p className="text-sm text-muted-foreground">Mendapat dukungan investasi dari BYLC Ventures untuk mengembangkan platform layanan perawatan.</p>
                 </CardContent>
               </Card>
-              <Card className="border border-border/50 rounded-2xl shadow-sm bg-card">
+              <Card className="border border-[#E7E5E4] rounded-xl shadow-sm bg-white">
                 <CardContent className="p-6">
                   <h4 className="font-bold text-foreground mb-2">Shark Tank</h4>
                   <p className="text-sm text-muted-foreground">Tampil dan mendapat pengakuan di acara Shark Tank, menampilkan visi inovatif kami.</p>
                 </CardContent>
               </Card>
-              <Card className="border border-border/50 rounded-2xl shadow-sm bg-card">
+              <Card className="border border-[#E7E5E4] rounded-xl shadow-sm bg-white">
                 <CardContent className="p-6">
                   <h4 className="font-bold text-foreground mb-2">Investor Global</h4>
                   <p className="text-sm text-muted-foreground">Mendapatkan pendanaan dari investor perorangan dari Australia dan Selandia Baru.</p>
@@ -297,7 +295,7 @@ export default function AboutContent() {
                 key={index}
                 variants={fadeInVariants}
               >
-                <Card className="h-full border border-border/50 shadow-sm hover:shadow-md transition-all duration-200 rounded-2xl bg-card">
+                <Card className="h-full border border-[#E7E5E4] shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-white">
                   <CardContent className="p-8 flex flex-col items-start">
 
                     <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-5">
@@ -323,7 +321,7 @@ export default function AboutContent() {
             variants={fadeInVariants}
             className="mt-12"
           >
-            <Card className="rounded-3xl border border-border/50 shadow-sm bg-gradient-to-r from-pink-50 to-blue-50">
+            <Card className="rounded-xl border border-[#E7E5E4] shadow-sm bg-[#FFF4EC]">
               <CardContent className="p-8 md:p-10 text-center">
 
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">
@@ -346,7 +344,7 @@ export default function AboutContent() {
 
       {/* CTA SECTION */}
       <motion.section
-        className="py-20 md:py-28 bg-slate-950 text-white relative overflow-hidden"
+        className="py-20 md:py-28 bg-[#18181B] text-white relative overflow-hidden"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.2 }}
@@ -370,7 +368,7 @@ export default function AboutContent() {
           </motion.h2>
 
           <motion.p
-            className="mb-8 text-base md:text-lg leading-relaxed text-slate-200"
+            className="mb-8 text-base md:text-lg leading-relaxed text-white/75"
             variants={fadeInVariants}
           >
             Baik Anda mencari layanan perawatan anak, pendampingan lansia,
@@ -390,7 +388,7 @@ export default function AboutContent() {
             >
               <Button
                 size="lg"
-                className="w-full rounded-full bg-white text-slate-950 hover:bg-slate-100 hover:shadow-md transition-all duration-200 font-bold px-8 gap-2"
+                className="w-full rounded-full bg-[#C9202B] text-white hover:bg-[#A91520] hover:shadow-md transition-all duration-200 font-bold px-8 gap-2"
               >
                 <img src="/whatsapp.png" alt="WhatsApp" width={20} height={20} />
                 Hubungi via WhatsApp

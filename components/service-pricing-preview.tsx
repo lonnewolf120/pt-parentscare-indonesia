@@ -14,25 +14,25 @@ import {
 
 const accentStyles = {
   pink: {
-    border: "border-pink-200",
-    text: "text-pink-600",
-    bg: "bg-pink-50",
-    button: "bg-pink-600 hover:bg-pink-700",
-    top: "bg-pink-500",
+    border: "border-[#F6D4D9]",
+    text: "text-[#C9202B]",
+    bg: "bg-[#FBE7EA]",
+    button: "bg-[#C9202B] hover:bg-[#A91520]",
+    top: "bg-[#C9202B]",
   },
   blue: {
-    border: "border-blue-200",
-    text: "text-blue-600",
-    bg: "bg-blue-50",
-    button: "bg-blue-600 hover:bg-blue-700",
-    top: "bg-blue-500",
+    border: "border-[#F6D4D9]",
+    text: "text-[#C9202B]",
+    bg: "bg-[#FBE7EA]",
+    button: "bg-[#C9202B] hover:bg-[#A91520]",
+    top: "bg-[#E86B75]",
   },
   red: {
-    border: "border-red-200",
-    text: "text-red-600",
-    bg: "bg-red-50",
-    button: "bg-red-600 hover:bg-red-700",
-    top: "bg-red-500",
+    border: "border-[#F6D4D9]",
+    text: "text-[#C9202B]",
+    bg: "bg-[#FBE7EA]",
+    button: "bg-[#C9202B] hover:bg-[#A91520]",
+    top: "bg-[#A91520]",
   },
 }
 
@@ -66,16 +66,16 @@ export default function ServicePricingPreview() {
   )
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-[#FFFDF9]">
       <div className="container">
         <div className="mx-auto mb-12 max-w-3xl text-center">
-          <span className="inline-flex rounded-full bg-pink-50 px-4 py-2 text-sm font-semibold text-pink-700">
+          <span className="inline-flex rounded-full bg-[#FBE7EA] px-4 py-2 text-sm font-semibold text-[#A91520]">
             Daftar Layanan & Harga
           </span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-gray-950 md:text-5xl">
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-[#18181B] md:text-5xl">
             Pilih Perawatan yang Sesuai untuk Keluarga Anda
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-[#6B6666] md:text-lg">
             Harga berikut adalah estimasi biaya klien. Tim kami akan membantu
             mencocokkan kebutuhan keluarga dengan caregiver, perawat, atau nanny
             yang tepat melalui WhatsApp.
@@ -100,18 +100,18 @@ export default function ServicePricingPreview() {
                       <Icon className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-950">{service.title}</h3>
-                      <p className="mt-1 text-sm text-gray-600">{service.description}</p>
+                      <h3 className="text-2xl font-bold text-[#18181B]">{service.title}</h3>
+                      <p className="mt-1 text-sm text-[#6B6666]">{service.description}</p>
                     </div>
                   </div>
 
                   <div className="space-y-3">
                     {featuredPrices.map((pkg) => (
-                      <div key={`${service.id}-${pkg.label}-${pkg.helper}`} className="rounded-lg border border-gray-100 bg-gray-50 p-4">
+                      <div key={`${service.id}-${pkg.label}-${pkg.helper}`} className="rounded-lg border border-[#E7E5E4] bg-[#FFF4EC] p-4">
                         <div className="flex items-start justify-between gap-4">
                           <div>
-                            <p className="text-sm font-semibold text-gray-900">{pkg.label}</p>
-                            <p className="mt-1 text-xs text-gray-500">{pkg.helper}</p>
+                            <p className="text-sm font-semibold text-[#18181B]">{pkg.label}</p>
+                            <p className="mt-1 text-xs text-[#6B6666]">{pkg.helper}</p>
                           </div>
                           <p className={`shrink-0 text-right text-sm font-bold ${styles.text}`}>{pkg.price}</p>
                         </div>
@@ -121,7 +121,7 @@ export default function ServicePricingPreview() {
 
                   <div className="mt-6 grid gap-2">
                     {service.features.slice(0, 3).map((feature) => (
-                      <div key={feature} className="flex items-start gap-2 text-sm text-gray-600">
+                      <div key={feature} className="flex items-start gap-2 text-sm text-[#6B6666]">
                         <CheckCircle2 className={`mt-0.5 h-4 w-4 shrink-0 ${styles.text}`} />
                         <span>{feature}</span>
                       </div>
@@ -142,10 +142,10 @@ export default function ServicePricingPreview() {
           })}
         </div>
 
-        <div className="mt-8 grid gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6 md:grid-cols-[1fr_1fr_auto] md:items-center">
+        <div className="mt-8 grid gap-4 rounded-xl border border-[#E7E5E4] bg-[#FFF4EC] p-6 md:grid-cols-[1fr_1fr_auto] md:items-center">
           <div>
-            <h3 className="font-bold text-gray-950">Ketentuan penting</h3>
-            <ul className="mt-3 space-y-2 text-sm text-gray-600">
+            <h3 className="font-bold text-[#18181B]">Ketentuan penting</h3>
+            <ul className="mt-3 space-y-2 text-sm text-[#6B6666]">
               {serviceNotes.slice(0, 3).map((note) => (
                 <li key={note} className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-pink-500" />
@@ -155,11 +155,11 @@ export default function ServicePricingPreview() {
             </ul>
           </div>
           <div>
-            <h3 className="font-bold text-gray-950">Keunggulan layanan</h3>
-            <ul className="mt-3 space-y-2 text-sm text-gray-600">
+            <h3 className="font-bold text-[#18181B]">Keunggulan layanan</h3>
+            <ul className="mt-3 space-y-2 text-sm text-[#6B6666]">
               {serviceAdvantages.slice(0, 3).map((advantage) => (
                 <li key={advantage} className="flex gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0F766E]" />
                   <span>{advantage}</span>
                 </li>
               ))}
