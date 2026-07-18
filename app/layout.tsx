@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import WhatsAppFloat from "@/components/whatsapp-float"
 import type React from "react" // Import React
 import { 
   generateMetadata as generateSEOMetadata, 
@@ -81,6 +82,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+        <WhatsAppFloat />
       </body>
     </html>
   )
