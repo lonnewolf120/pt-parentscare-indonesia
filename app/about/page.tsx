@@ -6,10 +6,12 @@ import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Users, Heart, Shield, Target, Zap, TrendingUp, Award, Mail } from "lucide-react"
 import { motion, type Variants } from "framer-motion"
+import WhatsAppLink from "@/components/whatsapp-link"
+import WhatsAppIcon from "@/components/icons/whatsapp-icon"
+
+const CTA_MESSAGE = "Halo, saya ingin mengetahui tentang layanan ParentsCare Indonesia.";
 
 export default function AboutContent() {
-  const whatsappHref =
-    "https://api.whatsapp.com/send/?phone=%2B628211663798&text=Halo,%20saya%20ingin%20mengetahui%20tentang%20layanan%20ParentsCare";
 
   const team = [
     { name: "Sams Abu Shomen", role: "CEO & Pendiri", image: "/ceo.png" },
@@ -82,20 +84,15 @@ export default function AboutContent() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             variants={fadeInVariants}
           >
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto"
-            >
+            <WhatsAppLink message={CTA_MESSAGE} className="w-full sm:w-auto">
               <Button
                 size="lg"
                 className="w-full rounded-full bg-[#C9202B] text-white hover:bg-[#A91520] hover:shadow-md transition-all duration-200 font-bold px-8 gap-2"
               >
-                <img src="/whatsapp.png" alt="WhatsApp" width={20} height={20} />
+                <WhatsAppIcon className="h-5 w-5" />
                 Hubungi via WhatsApp
               </Button>
-            </a>
+            </WhatsAppLink>
 
             <a href="mailto:ptparentscareindonesia@gmail.com" className="w-full sm:w-auto">
               <Button
@@ -380,20 +377,15 @@ export default function AboutContent() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             variants={fadeInVariants}
           >
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto"
-            >
+            <WhatsAppLink message={CTA_MESSAGE} className="w-full sm:w-auto">
               <Button
                 size="lg"
                 className="w-full rounded-full bg-[#C9202B] text-white hover:bg-[#A91520] hover:shadow-md transition-all duration-200 font-bold px-8 gap-2"
               >
-                <img src="/whatsapp.png" alt="WhatsApp" width={20} height={20} />
+                <WhatsAppIcon className="h-5 w-5" />
                 Hubungi via WhatsApp
               </Button>
-            </a>
+            </WhatsAppLink>
 
             <a href="mailto:ptparentscareindonesia@gmail.com" className="w-full sm:w-auto">
               <Button

@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import {
   allServices,
-  createWhatsAppHref,
   nannyService,
   serviceAdvantages,
   serviceNotes,
   standardServices,
 } from "@/lib/service-pricing"
+import WhatsAppLink from "@/components/whatsapp-link"
 
 const accentStyles = {
   pink: {
@@ -61,9 +61,6 @@ function getFeaturedPrices(serviceId: string) {
 }
 
 export default function ServicePricingPreview() {
-  const whatsappHref = createWhatsAppHref(
-    "Halo, saya ingin bertanya dan memesan layanan ParentsCare.",
-  )
 
   return (
     <section className="py-20 bg-[#FFFDF9]">
@@ -129,12 +126,14 @@ export default function ServicePricingPreview() {
                   </div>
 
                   <div className="mt-auto pt-6">
-                    <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                    <WhatsAppLink
+                      message={`Halo, saya ingin memesan layanan ${service.title} ParentsCare Indonesia.`}
+                    >
                       <Button className={`w-full text-white ${styles.button}`}>
                         <MessageCircle className="h-4 w-4" />
                         Pesan {service.title}
                       </Button>
-                    </a>
+                    </WhatsAppLink>
                   </div>
                 </CardContent>
               </Card>

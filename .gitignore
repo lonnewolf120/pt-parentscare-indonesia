@@ -2,7 +2,8 @@
 
 # dependencies
 /node_modules
-
+/legal
+legal/*
 # next.js
 **/.next/
 /out/

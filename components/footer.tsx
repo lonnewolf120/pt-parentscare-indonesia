@@ -2,13 +2,11 @@ import Link from "next/link"
 import { Facebook, Instagram, Mail, MapPin, MessageCircle, Music } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { createWhatsAppHref } from "@/lib/service-pricing"
+import WhatsAppLink from "@/components/whatsapp-link"
+
+const FOOTER_WHATSAPP_MESSAGE = "Halo, saya ingin menghubungi ParentsCare Indonesia."
 
 export default function Footer() {
-  const whatsappHref = createWhatsAppHref(
-    "Halo, saya ingin menghubungi ParentsCare Indonesia.",
-  )
-
   return (
     <footer className="bg-[#18181B] text-white">
       <div className="container py-12 md:py-16">
@@ -20,12 +18,12 @@ export default function Footer() {
               untuk keluarga di Jakarta dan Indonesia. Konsultasi dan booking
               layanan dilakukan melalui WhatsApp.
             </p>
-            <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="mt-6 inline-block">
+            <WhatsAppLink message={FOOTER_WHATSAPP_MESSAGE} className="mt-6 inline-block">
               <Button className="bg-[#C9202B] text-white hover:bg-[#A91520]">
                 <MessageCircle className="h-4 w-4" />
                 Konsultasi WhatsApp
               </Button>
-            </a>
+            </WhatsAppLink>
           </div>
 
           <div>
@@ -68,10 +66,10 @@ export default function Footer() {
           <div>
             <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-white/55">Kontak</h3>
             <div className="space-y-3 text-sm text-white/75">
-              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="flex gap-3 transition hover:text-[#E86B75]">
+              <WhatsAppLink message={FOOTER_WHATSAPP_MESSAGE} className="flex gap-3 transition hover:text-[#E86B75]">
                 <MessageCircle className="mt-0.5 h-4 w-4 shrink-0" />
                 <span>+62 821-1663-798</span>
-              </a>
+              </WhatsAppLink>
               <a href="mailto:ptparentscareindonesia@gmail.com" className="flex gap-3 transition hover:text-[#E86B75]">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0" />
                 <span>ptparentscareindonesia@gmail.com</span>

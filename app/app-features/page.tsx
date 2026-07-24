@@ -29,7 +29,7 @@ import {
 } from "lucide-react"
 import CustomCursor from "@/components/custom-cursor"
 import ParticleBackground from "@/components/particle-background"
-import { createWhatsAppHref } from "@/lib/service-pricing"
+import WhatsAppLink from "@/components/whatsapp-link"
 
 // Carousel component (must be defined after appFeatures)
 function FeatureCarousel({ features }: { features: typeof appFeatures }) {
@@ -226,10 +226,9 @@ const benefits = [
   },
 ]
 
+const CTA_MESSAGE = "Halo, saya ingin bertanya tentang layanan ParentsCare Indonesia."
+
 export default function AppFeatures() {
-  const whatsappHref = createWhatsAppHref(
-    "Halo, saya ingin bertanya tentang layanan ParentsCare.",
-  )
 
   const [activeStep, setActiveStep] = useState(0)
   const { scrollYProgress } = useScroll()
@@ -616,7 +615,7 @@ export default function AppFeatures() {
                 </motion.div>
 
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                  <WhatsAppLink message={CTA_MESSAGE}>
                     <Button
                       size="lg"
                       variant="outline"
@@ -625,7 +624,7 @@ export default function AppFeatures() {
                       Contact WhatsApp
                       <ArrowRight className="ml-2 w-6 h-6" />
                     </Button>
-                  </a>
+                  </WhatsAppLink>
                 </motion.div>
               </div>
 

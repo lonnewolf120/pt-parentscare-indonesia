@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import Image from "next/image"
 
-import { createWhatsAppHref } from "@/lib/service-pricing"
+import WhatsAppLink from "@/components/whatsapp-link"
 
 const SEARCH_ENDPOINT =
   process.env.NEXT_PUBLIC_CAREGIVER_API_URL ?? "https://parentscare-backend-becgb.ondigitalocean.app"
@@ -154,16 +154,12 @@ export default function CaregiversPage() {
         {error && (
           <div className="mx-auto mb-8 max-w-2xl rounded-lg border border-red-200 bg-red-50 p-4 text-center">
             <p className="text-sm text-red-800">{error}</p>
-            <a
-              href={createWhatsAppHref(
-                "Halo, saya ingin mencari pengasuh melalui ParentsCare Indonesia.",
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
+            <WhatsAppLink
+              message="Halo, saya ingin mencari pengasuh melalui ParentsCare Indonesia."
               className="mt-3 inline-block text-sm font-semibold text-pink underline underline-offset-4"
             >
               Hubungi kami via WhatsApp
-            </a>
+            </WhatsAppLink>
           </div>
         )}
 

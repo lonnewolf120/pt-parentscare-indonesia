@@ -7,11 +7,11 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { AlertCircle, CheckCircle } from 'lucide-react'
+import { createWhatsAppHref } from '@/lib/service-pricing'
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
-  const whatsappNumber = '628211663798'
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -35,11 +35,7 @@ export default function ContactForm() {
       `Pesan: ${message}`,
     ].join('\n')
 
-    window.open(
-      `https://api.whatsapp.com/send/?phone=%2B${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`,
-      '_blank',
-      'noopener,noreferrer',
-    )
+    window.open(createWhatsAppHref(whatsappMessage), '_blank', 'noopener,noreferrer')
 
     setSubmitted(true)
     e.currentTarget.reset()

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { UserPlus, Search, Calendar, Heart, ArrowRight, CheckCircle, Star, Shield } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { createWhatsAppHref } from "@/lib/service-pricing"
+import WhatsAppLink from "@/components/whatsapp-link"
 
 const steps = [
   {
@@ -74,10 +74,9 @@ const benefits = [
   },
 ]
 
+const CTA_MESSAGE = "Halo, saya ingin mulai mencari caregiver/nanny/perawat ParentsCare."
+
 export default function HowItWorks() {
-  const whatsappHref = createWhatsAppHref(
-    "Halo, saya ingin mulai mencari caregiver/nanny/perawat ParentsCare.",
-  )
 
   const sectionRef = useRef(null)
   const titleRef = useRef(null)
@@ -370,7 +369,7 @@ export default function HowItWorks() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                  <WhatsAppLink message={CTA_MESSAGE}>
                     <Button
                       size="lg"
                       className="bg-white text-pink hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg cursor-hover"
@@ -378,7 +377,7 @@ export default function HowItWorks() {
                       Mulai Perjalanan Anda
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
-                  </a>
+                  </WhatsAppLink>
                 </motion.div>
 
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

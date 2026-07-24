@@ -21,10 +21,10 @@ import ServicePricingPreview from "@/components/service-pricing-preview"
 import TestimonialsSection from "@/components/testimonials-section"
 import {
   allServices,
-  createWhatsAppHref,
   serviceAdvantages,
   serviceNotes,
 } from "@/lib/service-pricing"
+import WhatsAppLink from "@/components/whatsapp-link"
 
 const serviceIcons = {
   caregiver: ShieldCheck,
@@ -61,10 +61,9 @@ const matchingSteps = [
   },
 ]
 
+const CTA_MESSAGE = "Halo, saya ingin konsultasi dan memesan layanan ParentsCare Indonesia."
+
 export default function Home() {
-  const whatsappHref = createWhatsAppHref(
-    "Halo, saya ingin konsultasi dan memesan layanan ParentsCare Indonesia.",
-  )
 
   return (
     <div className="bg-[#FFFDF9] text-[#18181B]">
@@ -117,7 +116,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.24 }}
               className="mt-8 flex flex-col gap-3 sm:flex-row"
             >
-              <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+              <WhatsAppLink message={CTA_MESSAGE}>
                 <Button
                   size="lg"
                   className="w-full bg-[#C9202B] text-white hover:bg-[#A91520] sm:w-auto"
@@ -125,7 +124,7 @@ export default function Home() {
                   <MessageCircle className="h-5 w-5" />
                   Konsultasi via WhatsApp
                 </Button>
-              </a>
+              </WhatsAppLink>
               <Link href="/services">
                 <Button
                   size="lg"
@@ -161,11 +160,9 @@ export default function Home() {
               const Icon = serviceIcons[service.id as keyof typeof serviceIcons]
 
               return (
-                <a
+                <WhatsAppLink
                   key={service.id}
-                  href={whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  message={`Halo, saya ingin konsultasi layanan ${service.title} ParentsCare Indonesia.`}
                   className="group rounded-lg border border-[#E7E5E4] p-5 transition hover:border-[#F6D4D9] hover:bg-[#FBE7EA]/50"
                 >
                   <div className={`mb-4 flex h-11 w-11 items-center justify-center rounded-lg border ${accentStyles[service.accent]}`}>
@@ -177,7 +174,7 @@ export default function Home() {
                     Konsultasikan kebutuhan
                     <ArrowRight className="ml-1 h-4 w-4 transition group-hover:translate-x-1" />
                   </div>
-                </a>
+                </WhatsAppLink>
               )
             })}
           </div>
@@ -317,12 +314,12 @@ export default function Home() {
                 membalas dengan langkah berikutnya.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                <WhatsAppLink message={CTA_MESSAGE}>
                   <Button size="lg" className="w-full bg-[#C9202B] text-white hover:bg-[#A91520] sm:w-auto">
                     <MessageCircle className="h-5 w-5" />
                     WhatsApp ParentsCare
                   </Button>
-                </a>
+                </WhatsAppLink>
                 <Link href="/services">
                   <Button
                     size="lg"

@@ -20,6 +20,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { MapPin, Phone, Mail } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import WhatsAppIcon from "@/components/icons/whatsapp-icon"
+import WhatsAppLink from "@/components/whatsapp-link"
 import {
   Accordion,
   AccordionContent,
@@ -27,10 +28,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
-export default function Contact() {
-  const whatsappHref =
-    "https://api.whatsapp.com/send/?phone=%2B628211663798&text=Halo,%20saya%20ingin%20memesan%20layanan%20atau%20membutuhkan%20bantuan%20ParentsCare";
+const CONTACT_MESSAGE =
+  "Halo, saya ingin memesan layanan atau membutuhkan bantuan ParentsCare Indonesia.";
 
+export default function Contact() {
   return (
     <div className="container py-8 md:py-12">
       {/* Hero Section */}
@@ -44,7 +45,7 @@ export default function Contact() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 19.5a7.5 7.5 0 1115 0v.75A2.25 2.25 0 0117.25 22.5h-10.5A2.25 2.25 0 014.5 20.25v-.75z" />
           </svg>
           <span className="text-base text-[#2B2B2F] font-medium">
-            Anda dapat <span className="font-semibold text-[#C9202B]">memesan layanan kami</span> dan menghubungi customer support melalui <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="underline hover:text-[#A91520] transition-colors">WhatsApp</a>. Email tersedia untuk pertanyaan non-mendesak.
+            Anda dapat <span className="font-semibold text-[#C9202B]">memesan layanan kami</span> dan menghubungi customer support melalui <WhatsAppLink message={CONTACT_MESSAGE} className="underline hover:text-[#A91520] transition-colors">WhatsApp</WhatsAppLink>. Email tersedia untuk pertanyaan non-mendesak.
           </span>
         </div>
       </div>
@@ -73,9 +74,9 @@ export default function Contact() {
                   <Phone className="mt-1 h-5 w-5 text-pink" />
                   <div>
                     <p className="font-medium">Pesan Kami di Whatsapp</p>
-                    <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-pink hover:underline">
+                    <WhatsAppLink message={CONTACT_MESSAGE} className="text-sm text-muted-foreground hover:text-pink hover:underline">
                       +62 821-1663-798
-                    </a>
+                    </WhatsAppLink>
                     <p className="text-sm text-muted-foreground">Waktu respons: dalam 24 jam</p>
                   </div>
                 </div>
@@ -136,9 +137,9 @@ export default function Contact() {
                 <Phone className="h-5 w-5 text-red" />
                 <div>
                   <p className="font-medium">Hotline Darurat</p>
-                  <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-red hover:underline">
+                  <WhatsAppLink message={CONTACT_MESSAGE} className="text-sm text-muted-foreground hover:text-red hover:underline">
                     +62 821-1663-798
-                  </a>
+                  </WhatsAppLink>
                   <p className="text-sm text-muted-foreground">Tersedia 24/7 untuk kebutuhan perawatan mendesak</p>
                 </div>
               </div>
@@ -193,12 +194,12 @@ export default function Contact() {
           Hubungi tim kami melalui WhatsApp untuk pemesanan layanan, dukungan pelanggan, atau pertanyaan mendesak.
         </p>
         <div className="flex justify-center">
-          <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+          <WhatsAppLink message={CONTACT_MESSAGE}>
             <Button size="sm" className="border border-[#C9202B] bg-[#C9202B] text-white hover:bg-[#A91520] flex items-center space-x-2">
               <WhatsAppIcon className="h-5 w-5" />
               <span>WhatsApp</span>
             </Button>
-          </a>
+          </WhatsAppLink>
         </div>
       </div>
     </div>

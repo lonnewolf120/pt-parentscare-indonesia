@@ -18,9 +18,9 @@ import {
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import WhatsAppLink from "@/components/whatsapp-link"
 import {
   allServices,
-  createWhatsAppHref,
   nannyService,
   serviceAdvantages,
   serviceNotes,
@@ -72,11 +72,11 @@ const serviceFit = {
   ],
 }
 
+const CTA_MESSAGE =
+  "Halo, saya ingin memesan layanan ParentsCare Indonesia. Mohon bantu pilih paket yang sesuai."
+
 export default function Services() {
   const [activeService, setActiveService] = useState(0)
-  const whatsappHref = createWhatsAppHref(
-    "Halo, saya ingin memesan layanan ParentsCare. Mohon bantu pilih paket yang sesuai.",
-  )
   const active = allServices[activeService]
   const styles = accentStyles[active.accent]
   const ActiveIcon = serviceIcons[active.id as keyof typeof serviceIcons]
@@ -106,12 +106,12 @@ export default function Services() {
               jadwal, serta kisaran harga. Booking dan konsultasi dilakukan melalui WhatsApp.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+              <WhatsAppLink message={CTA_MESSAGE}>
                 <Button size="lg" className="w-full bg-[#C9202B] text-white hover:bg-[#A91520] sm:w-auto">
                   <MessageCircle className="h-5 w-5" />
                   Konsultasi paket
                 </Button>
-              </a>
+              </WhatsAppLink>
               <Link href="/career">
                 <Button
                   size="lg"
@@ -246,11 +246,9 @@ export default function Services() {
                   <div className="divide-y divide-gray-100">
                     {active.id === "nanny"
                       ? nannyService.packages.map((pkg) => (
-                          <a
+                          <WhatsAppLink
                             key={`${pkg.childAge}-${pkg.serviceTime}`}
-                            href={whatsappHref}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            message={`Halo, saya ingin memesan paket Nanny (${pkg.childAge}, ${pkg.serviceTime}) ParentsCare Indonesia.`}
                             className="block p-5 transition hover:bg-[#FBE7EA]/50"
                           >
                             <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
@@ -270,16 +268,14 @@ export default function Services() {
                                 </div>
                               </div>
                             </div>
-                          </a>
+                          </WhatsAppLink>
                         ))
                       : standardServices
                           .find((service) => service.id === active.id)
                           ?.packages.map((pkg) => (
-                            <a
+                            <WhatsAppLink
                               key={pkg.serviceTime}
-                              href={whatsappHref}
-                              target="_blank"
-                              rel="noopener noreferrer"
+                              message={`Halo, saya ingin memesan paket ${active.title} (${pkg.serviceTime}) ParentsCare Indonesia.`}
                               className="block p-5 transition hover:bg-[#FFF4EC]"
                             >
                               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -289,17 +285,17 @@ export default function Services() {
                                 </div>
                                 <div className={`text-lg font-bold ${styles.text}`}>{pkg.clientPrice}</div>
                               </div>
-                            </a>
+                            </WhatsAppLink>
                           ))}
                   </div>
 
                   <div className="border-t border-[#E7E5E4] p-6">
-                    <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                    <WhatsAppLink message={`Halo, saya ingin memesan layanan ${active.title} ParentsCare Indonesia.`}>
                       <Button className={`w-full text-white ${styles.solid}`}>
                         <MessageCircle className="h-4 w-4" />
                         Pesan {active.title} via WhatsApp
                       </Button>
-                    </a>
+                    </WhatsAppLink>
                   </div>
                 </CardContent>
               </Card>
@@ -356,12 +352,12 @@ export default function Services() {
             membutuhkan pengasuh, perawat, atau nanny, beserta kisaran paket yang sesuai.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+            <WhatsAppLink message={CTA_MESSAGE}>
               <Button size="lg" className="w-full bg-[#C9202B] text-white hover:bg-[#A91520] sm:w-auto">
                 <MessageCircle className="h-5 w-5" />
                 Tanya via WhatsApp
               </Button>
-            </a>
+            </WhatsAppLink>
             <Link href="/contact">
               <Button
                 size="lg"

@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { generateMetadata } from "@/lib/seo"
 import {
-  createWhatsAppHref,
   nannyService,
   standardServices,
 } from "@/lib/service-pricing"
+import WhatsAppLink from "@/components/whatsapp-link"
 
 export const metadata: Metadata = generateMetadata({
   title: "Career ParentsCare Indonesia - Lowongan Caregiver, Perawat & Nanny",
@@ -31,10 +31,10 @@ const serviceIcons = {
   nanny: Baby,
 }
 
+const APPLICATION_MESSAGE =
+  "Halo, saya ingin melamar sebagai caregiver/nanny/perawat ParentsCare Indonesia."
+
 export default function CareerPage() {
-  const applicationHref = createWhatsAppHref(
-    "Halo, saya ingin melamar sebagai caregiver/nanny/perawat ParentsCare Indonesia.",
-  )
 
   return (
     <main className="bg-[#FFFDF9]">
@@ -52,12 +52,12 @@ export default function CareerPage() {
             layanan profesional.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href={applicationHref} target="_blank" rel="noopener noreferrer">
+            <WhatsAppLink message={APPLICATION_MESSAGE}>
               <Button size="lg" className="w-full bg-[#C9202B] text-white hover:bg-[#A91520] sm:w-auto">
                 <MessageCircle className="h-5 w-5" />
                 Lamar via WhatsApp
               </Button>
-            </a>
+            </WhatsAppLink>
             <Link href="/services">
               <Button
                 size="lg"
@@ -201,11 +201,11 @@ export default function CareerPage() {
                 <p>Salary: Sesuai pengalaman dan jadwal</p>
                 <p>Contact: WhatsApp +62 821-1663-798</p>
               </div>
-              <a href={applicationHref} target="_blank" rel="noopener noreferrer" className="mt-5 block">
+              <WhatsAppLink message={APPLICATION_MESSAGE} className="mt-5 block">
                 <Button className="w-full bg-[#C9202B] text-white hover:bg-[#A91520]">
                   Lamar via WhatsApp
                 </Button>
-              </a>
+              </WhatsAppLink>
             </CardContent>
           </Card>
         </div>
