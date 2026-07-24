@@ -10,10 +10,10 @@ export default function PrivacyPolicy() {
         <CardContent className="p-6 md:p-8">
           <div className="mb-8 flex justify-center">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-xdT4RQ8nOQLiYJwj4rRIQD4iCZvlmZ.png"
+              src="/ptlogo.png"
               alt="ParentsCare Logo"
               width={200}
-              height={50}
+              height={76}
               priority
             />
           </div>

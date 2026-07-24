@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { MapPin, Phone, Mail } from "lucide-react"
 import ContactForm from "@/components/contact-form"
+import WhatsAppIcon from "@/components/icons/whatsapp-icon"
 import {
   Accordion,
   AccordionContent,
@@ -194,7 +195,7 @@ export default function Contact() {
         <div className="flex justify-center">
           <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
             <Button size="sm" className="border border-[#C9202B] bg-[#C9202B] text-white hover:bg-[#A91520] flex items-center space-x-2">
-              <img src="https://www.svgrepo.com/show/38250/whatsapp.svg" alt="WhatsApp" width={20} height={20} />
+              <WhatsAppIcon className="h-5 w-5" />
               <span>WhatsApp</span>
             </Button>
           </a>

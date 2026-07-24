@@ -1,14 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   images: {
+    // NOTE: optimization is intentionally disabled; re-enabling changes
+    // Vercel image-optimization billing, so it is a deployment decision.
     unoptimized: true,
-    formats: ['image/avif', 'image/webp'],
   },
   // Enable compression
   compress: true,
@@ -16,8 +14,15 @@ const nextConfig = {
   generateEtags: true,
   // Optimize production builds
   productionBrowserSourceMaps: false,
-  // Enable SWC minification
-  swcMinify: true,
+  // Canonical policy URLs. Kept here (not only in vercel.json) so the
+  // redirects also apply to `next start` and any non-Vercel host.
+  async redirects() {
+    return [
+      { source: '/privacy', destination: '/privacy-policy', permanent: true },
+      { source: '/terms', destination: '/terms-of-service', permanent: true },
+      { source: '/tos', destination: '/terms-of-service', permanent: true },
+    ]
+  },
   // Custom headers for SEO and performance
   async headers() {
     return [

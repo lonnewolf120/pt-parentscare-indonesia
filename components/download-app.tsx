@@ -158,7 +158,7 @@ export default function DownloadApp() {
               className="relative mx-auto max-w-sm rounded-3xl overflow-hidden shadow-2xl"
             >
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image1-L5qq8vs9IOXA5AHGIKLdwsQG5j2SoT.png"
+                src="/image1.jpeg"
                 alt="ParentsCare app main screen showing premium caregiver services"
                 width={400}
                 height={800}
