@@ -12,9 +12,9 @@ import {
 import WhatsAppLink from "@/components/whatsapp-link"
 
 export const metadata: Metadata = generateMetadata({
-  title: "Career ParentsCare Indonesia - Lowongan Caregiver, Perawat & Nanny",
+  title: "Karier & Lowongan Caregiver, Perawat & Nanny",
   description:
-    "Lamar sebagai caregiver, perawat, atau nanny ParentsCare Indonesia. Lihat kisaran gaji kandidat, persyaratan dokumen, dan format job circular. Pendaftaran melalui WhatsApp.",
+    "Lamar sebagai caregiver, perawat, atau nanny ParentsCare Indonesia. Lihat kisaran gaji, persyaratan dokumen, dan cara mendaftar via WhatsApp.",
   keywords: [
     "lowongan caregiver Jakarta",
     "lowongan nanny Jakarta",

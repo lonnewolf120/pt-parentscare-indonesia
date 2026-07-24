@@ -1,5 +1,15 @@
+import type { Metadata } from "next"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
+
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: "Kebijakan Privasi",
+  description:
+    "Kebijakan privasi ParentsCare Indonesia: bagaimana kami mengumpulkan, menggunakan, dan melindungi data pribadi Anda.",
+  url: "/privacy-policy",
+})
 
 export default function PrivacyPolicy() {
   const lastUpdated = "June 9, 2025"

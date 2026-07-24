@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 
 export const siteConfig = {
   name: 'ParentsCare Indonesia',
-  title: 'ParentsCare Indonesia - Jasa Pengasuh, Perawat Home Care & Nanny di Jakarta',
-  description: 'ParentsCare Indonesia menyediakan jasa pengasuh lansia, perawat home care, dan nanny profesional di Jakarta dan Jabodetabek. Konsultasi, pencocokan kandidat, interview, dan booking layanan dilakukan melalui WhatsApp.',
+  title: 'ParentsCare Indonesia: Pengasuh, Perawat & Nanny Jakarta',
+  description: 'Jasa pengasuh lansia, perawat home care, dan nanny profesional di Jakarta & Jabodetabek. Konsultasi dan booking layanan mudah lewat WhatsApp.',
   url: 'https://www.parentscareindonesia.xyz',
   ogImage: 'https://www.parentscareindonesia.xyz/images/caregiver_service_1.jpeg',
   keywords: [

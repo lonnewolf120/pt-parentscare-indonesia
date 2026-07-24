@@ -1,5 +1,15 @@
+import type { Metadata } from "next"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
+
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: "Syarat & Ketentuan",
+  description:
+    "Syarat dan ketentuan penggunaan layanan dan aplikasi ParentsCare Indonesia (PT Parents Care Indonesia).",
+  url: "/terms-of-service",
+})
 
 export default function TermsOfService() {
   const lastUpdated = "July 25, 2026"

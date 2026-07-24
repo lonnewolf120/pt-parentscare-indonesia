@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import { generateMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = generateMetadata({
-  title: 'Hubungi ParentsCare Indonesia - Booking Caregiver, Perawat & Nanny',
-  description: 'Hubungi ParentsCare Indonesia melalui WhatsApp untuk booking caregiver, perawat, nanny, dan dukungan pelanggan 24/7. Email tersedia untuk pertanyaan non-mendesak.',
+  title: 'Hubungi Kami: Booking Caregiver, Perawat & Nanny',
+  description: 'Hubungi ParentsCare Indonesia via WhatsApp untuk booking caregiver, perawat, dan nanny, serta dukungan pelanggan 24/7 di Jakarta & Jabodetabek.',
   keywords: [
     'kontak ParentsCare Indonesia',
     'booking caregiver Indonesia',
