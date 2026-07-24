@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 
 export default function TermsOfService() {
-  const lastUpdated = "June 9, 2025"
+  const lastUpdated = "July 25, 2026"
 
   return (
     <div className="container mx-auto py-8 px-4">
@@ -19,17 +19,36 @@ export default function TermsOfService() {
           </div>
 
           <div className="prose prose-slate max-w-none">
-            <h1 className="text-3xl font-bold text-center text-pink mb-2">Terms of Service for ParentsCare</h1>
+            <h1 className="text-3xl font-bold text-center text-pink mb-2">Terms of Service for ParentsCare Indonesia</h1>
             <p className="text-center text-muted-foreground mb-6">
               <strong>Last Updated: {lastUpdated}</strong>
             </p>
 
             <p className="lead">
-              Welcome to ParentsCare (the "App"), operated by Parents Care Limited ("we," "us," or "our"). These Terms
-              of Service ("Terms") govern your access to and use of the App. By accessing or using the App, you agree to
-              be bound by these Terms. If you disagree with any part of the Terms, then you do not have permission to
-              access or use the App.
+              Welcome to ParentsCare (the "App" and the "Services"), operated by{" "}
+              <strong>PT Parents Care Indonesia</strong> ("we," "us," or "our"), a limited liability company
+              (Perseroan Terbatas) incorporated under the laws of the Republic of Indonesia. These Terms of Service
+              ("Terms") govern your access to and use of the App and our services. By accessing or using the App, you
+              agree to be bound by these Terms. If you disagree with any part of the Terms, then you do not have
+              permission to access or use the App.
             </p>
+
+            <div className="my-6 rounded-lg border border-pink/30 bg-pink/5 p-5 text-sm">
+              <p className="mb-2 font-semibold text-foreground">Company Information</p>
+              <ul className="list-none space-y-1 pl-0 text-muted-foreground">
+                <li><strong>Legal Entity:</strong> PT Parents Care Indonesia (Penanaman Modal Asing / PT PMA)</li>
+                <li><strong>Business Registration Number (NIB):</strong> 2601260113368</li>
+                <li><strong>Tax ID (NPWP):</strong> 1000000007961396</li>
+                <li><strong>Ministry of Law Approval (SK AHU):</strong> AHU-0006378.AH.01.01.TAHUN 2026</li>
+                <li><strong>Primary Business Classification (KBLI):</strong> 78300 &mdash; Human Resources Provision and HR Function Management</li>
+                <li>
+                  <strong>Registered Office:</strong> Jl. Pringgondani No. 21, RT/RW 003/003, Kelurahan Pondok Labu,
+                  Kecamatan Cilandak, Kota Administrasi Jakarta Selatan, DKI Jakarta 12450, Indonesia
+                </li>
+                <li><strong>Email:</strong> ptparentscareindonesia@gmail.com</li>
+                <li><strong>Phone:</strong> +62 821-1000-9811</li>
+              </ul>
+            </div>
 
             <p>
               We reserve the right to modify or revise these Terms at any time at our sole discretion. All changes are
@@ -156,7 +175,7 @@ export default function TermsOfService() {
                 The App and its entire contents, features, and functionality (including but not limited to all
                 information, software, text, displays, images, video, and audio, and the design, selection, and
                 arrangement thereof) are owned by us, our licensors, or other providers of such material and are
-                protected by United States and international copyright, trademark, patent, trade secret, and other
+                protected by Indonesian and international copyright, trademark, patent, trade secret, and other
                 intellectual property or proprietary rights laws.
               </li>
               <li>
@@ -174,11 +193,21 @@ export default function TermsOfService() {
               </li>
             </ul>
 
-            <h2 className="text-2xl font-bold text-pink mt-8">7. Payments and Subscriptions</h2>
+            <h2 className="text-2xl font-bold text-pink mt-8">7. Payments and Fees</h2>
             <ul className="list-disc pl-6">
               <li>
-                Payments are handled by SSLCommerz Inc, And we don't store any user info as users only give those
-                information to SSLCommerz, so any dispute or error arising will be taken care of by SSLCommerz Inc.
+                Fees for our services are quoted and confirmed with you directly (including via WhatsApp) before any
+                service is provided. All fees are stated in Indonesian Rupiah (IDR) unless expressly stated otherwise.
+              </li>
+              <li>
+                Where payments are processed through a third-party payment provider, your payment is subject to that
+                provider's terms and privacy policy. We do not store your full payment card details; those are handled
+                by the payment provider. Any dispute or error relating to payment processing may need to be resolved
+                with the relevant payment provider in addition to us.
+              </li>
+              <li>
+                Unless otherwise agreed in writing, applicable taxes are charged in accordance with Indonesian tax
+                regulations.
               </li>
             </ul>
 
@@ -226,13 +255,22 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-bold text-pink mt-8">11. Governing Law and Dispute Resolution</h2>
             <ul className="list-disc pl-6">
               <li>
-                These Terms shall be governed by and construed in accordance with the laws of Bangladesh, without regard
-                to its conflict of law principles.
+                These Terms shall be governed by and construed in accordance with the laws of the Republic of Indonesia,
+                without regard to its conflict of law principles.
               </li>
               <li>
-                Any dispute arising out of or relating to these Terms or the App shall be resolved through binding
-                arbitration in accordance with the rules of the Shalish Legal Services LTD. The arbitration shall take
-                place in Bangladesh. The decision of the arbitrator shall be final and binding.
+                In the event of any dispute, controversy, or claim arising out of or relating to these Terms or the App,
+                the parties shall first seek to resolve it amicably through good-faith deliberation to reach consensus
+                (musyawarah untuk mufakat) within 30 (thirty) days of written notice of the dispute.
+              </li>
+              <li>
+                If the dispute cannot be resolved amicably within that period, the parties agree to submit the dispute
+                to the exclusive jurisdiction of the South Jakarta District Court (Pengadilan Negeri Jakarta Selatan).
+              </li>
+              <li>
+                Nothing in this section limits any mandatory rights you may have as a consumer under Indonesian law,
+                including Law No. 8 of 1999 on Consumer Protection, such as the right to pursue a complaint through the
+                Consumer Dispute Settlement Body (Badan Penyelesaian Sengketa Konsumen / BPSK).
               </li>
               <li>
                 Notwithstanding the foregoing, we reserve the right to seek injunctive or other equitable relief in any
