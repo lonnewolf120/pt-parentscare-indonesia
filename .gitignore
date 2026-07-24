@@ -27,3 +27,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# sensitive corporate/legal documents (NIB, NPWP, SK AHU, etc.)
+# reference-only source material — must not be committed or web-served
+/legal/
