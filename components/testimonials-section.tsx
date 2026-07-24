@@ -123,9 +123,9 @@ const testimonials = [
               }}
             ></div>
 
-            <h4 className="text-xl font-semibold text-white">
+            <h3 className="text-xl font-semibold text-white">
               {testimonials[currentTestimonial].name}
-            </h4>
+            </h3>
 
             <p className="text-white">
               {testimonials[currentTestimonial].role}

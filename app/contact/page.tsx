@@ -16,7 +16,7 @@ export const metadata: Metadata = generateMetadata({
 })
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card"
 import { MapPin, Phone, Mail } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import WhatsAppIcon from "@/components/icons/whatsapp-icon"
@@ -55,7 +55,7 @@ export default function Contact() {
         <div className="space-y-8">
           <Card className="border-pink">
             <CardHeader>
-              <CardTitle><span className="text-pink">Terhubung Dengan Kami</span></CardTitle>
+              <h2 className="text-2xl font-semibold leading-none tracking-tight"><span className="text-pink">Terhubung Dengan Kami</span></h2>
               <CardDescription>Tim kami siap membantu Anda dengan pertanyaan atau kekhawatiran apa pun.</CardDescription>
             </CardHeader>
             <CardContent>
@@ -95,7 +95,7 @@ export default function Contact() {
 
           {/* <Card className="border-blue">
             <CardHeader>
-              <CardTitle className="text-blue">Office Hours</CardTitle>
+              <h2 className="text-2xl font-semibold leading-none tracking-tight text-blue">Office Hours</h2>
               <CardDescription>We're available during the following hours to serve you better.</CardDescription>
             </CardHeader>
             <CardContent>
@@ -127,7 +127,7 @@ export default function Contact() {
 
           <Card className="border-red">
             <CardHeader>
-              <CardTitle><span className="text-red">Kontak Darurat</span></CardTitle>
+              <h2 className="text-2xl font-semibold leading-none tracking-tight"><span className="text-red">Kontak Darurat</span></h2>
               <CardDescription>
                 Untuk masalah mendesak di luar jam kerja, silakan gunakan hotline darurat kami.
               </CardDescription>

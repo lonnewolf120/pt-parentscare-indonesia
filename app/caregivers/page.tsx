@@ -89,13 +89,14 @@ export default function CaregiversPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         <Input
+          aria-label="Nama pengasuh"
           placeholder="Nama Pengasuh"
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="border-pink"
         />
         <Select onValueChange={(value) => setTypes([value])}>
-          <SelectTrigger className="border-pink">
+          <SelectTrigger aria-label="Jenis pengasuh" className="border-pink">
             <SelectValue placeholder="Jenis Pengasuh" />
           </SelectTrigger>
           <SelectContent>
@@ -105,7 +106,7 @@ export default function CaregiversPage() {
           </SelectContent>
         </Select>
         <Select onValueChange={(value) => setCities([value])}>
-          <SelectTrigger className="border-pink">
+          <SelectTrigger aria-label="Kota" className="border-pink">
             <SelectValue placeholder="Kota" />
           </SelectTrigger>
           <SelectContent>
@@ -118,18 +119,20 @@ export default function CaregiversPage() {
         </Select>
         <Input
           type="number"
+          aria-label="Harga minimum"
           placeholder="Harga Minimum"
           onChange={(e) => setMinPrice(Number(e.target.value))}
           className="border-pink"
         />
         <Input
           type="number"
+          aria-label="Harga maksimal"
           placeholder="Harga Maksimal"
           onChange={(e) => setMaxPrice(Number(e.target.value))}
           className="border-pink"
         />
         <Select onValueChange={setDuration}>
-          <SelectTrigger className="border-pink">
+          <SelectTrigger aria-label="Durasi layanan" className="border-pink">
             <SelectValue placeholder="Durasi" />
           </SelectTrigger>
           <SelectContent>

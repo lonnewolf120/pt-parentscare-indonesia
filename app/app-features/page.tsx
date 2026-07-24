@@ -62,7 +62,11 @@ function FeatureCarousel({ features }: { features: typeof appFeatures }) {
         <div className="flex-1 flex justify-center">
           <img
             src={feature.screenshot}
-            alt={feature.title + ' screenshot'}
+            alt={`Tangkapan layar aplikasi: ${feature.title}`}
+            width={320}
+            height={288}
+            loading="lazy"
+            decoding="async"
             className="rounded-xl shadow-lg object-cover w-full max-w-xs h-72"
           />
         </div>
@@ -103,7 +107,7 @@ const appFeatures = [
     description: "Browse profiles of thoroughly vetted and background-checked caregivers",
     color: "pink",
     gradient: "from-pink-500 to-pink-600",
-    screenshot: "/screen1.jpg",
+    screenshot: "/feature-verified.png",
   },
   {
     icon: Calendar,
@@ -111,7 +115,7 @@ const appFeatures = [
     description: "Share your preferred schedule and requirements with our team through WhatsApp",
     color: "blue",
     gradient: "from-pink-600 to-pink-800",
-    screenshot: "/screen2.jpg",
+    screenshot: "/feature-booking.png",
   },
   {
     icon: MapPin,
@@ -119,7 +123,7 @@ const appFeatures = [
     description: "Find caregivers in your area with our smart location-based matching",
     color: "red",
     gradient: "from-red-500 to-red-600",
-    screenshot: "/screen3.jpg",
+    screenshot: "/feature-location.png",
   },
   {
     icon: CreditCard,
@@ -127,7 +131,7 @@ const appFeatures = [
     description: "Review package pricing before our team confirms the right service for your family",
     color: "pink",
     gradient: "from-pink-500 to-pink-600",
-    screenshot: "/screen4.jpg",
+    screenshot: "/image2.jpeg",
   },
   {
     icon: Bell,
@@ -135,7 +139,7 @@ const appFeatures = [
     description: "Stay updated with care reminders and service updates",
     color: "blue",
     gradient: "from-pink-600 to-pink-800",
-    screenshot: "/screen5.jpg",
+    screenshot: "/step-4-peace.png",
   },
   {
     icon: MessageCircle,
@@ -143,7 +147,7 @@ const appFeatures = [
     description: "Contact the ParentsCare team directly for booking, support, and service questions",
     color: "red",
     gradient: "from-red-500 to-red-600",
-    screenshot: "/screen6.jpg",
+    screenshot: "/image3.jpeg",
   },
 ]
 
@@ -384,12 +388,12 @@ export default function AppFeatures() {
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <img src="/screen1.jpg" alt="App Screenshot 1" className="rounded-xl shadow-lg object-cover w-full h-72" />
-            <img src="/screen2.jpg" alt="App Screenshot 2" className="rounded-xl shadow-lg object-cover w-full h-72" />
-            <img src="/screen3.jpg" alt="App Screenshot 3" className="rounded-xl shadow-lg object-cover w-full h-72" />
-            <img src="/screen4.jpg" alt="App Screenshot 4" className="rounded-xl shadow-lg object-cover w-full h-72" />
-            <img src="/screen5.jpg" alt="App Screenshot 5" className="rounded-xl shadow-lg object-cover w-full h-72" />
-            <img src="/screen6.jpg" alt="App Screenshot 6" className="rounded-xl shadow-lg object-cover w-full h-72" />
+            <img src="/feature-verified.png" alt="App Screenshot 1" className="rounded-xl shadow-lg object-cover w-full h-72" />
+            <img src="/feature-booking.png" alt="App Screenshot 2" className="rounded-xl shadow-lg object-cover w-full h-72" />
+            <img src="/feature-location.png" alt="App Screenshot 3" className="rounded-xl shadow-lg object-cover w-full h-72" />
+            <img src="/image2.jpeg" alt="App Screenshot 4" className="rounded-xl shadow-lg object-cover w-full h-72" />
+            <img src="/step-4-peace.png" alt="App Screenshot 5" className="rounded-xl shadow-lg object-cover w-full h-72" />
+            <img src="/image3.jpeg" alt="App Screenshot 6" className="rounded-xl shadow-lg object-cover w-full h-72" />
           </div>
         </div>
       </section> */}
@@ -581,7 +585,7 @@ export default function AppFeatures() {
                   {benefit.stat}
                 </div>
                 <div className="text-sm opacity-80 mb-2">{benefit.statLabel}</div>
-                <h4 className="text-lg font-semibold mb-2">{benefit.title}</h4>
+                <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
                 <p className="text-sm opacity-90">{benefit.description}</p>
               </motion.div>
             ))}

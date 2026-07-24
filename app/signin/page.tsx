@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { setUserCookie, baseUrl } from '@/utils/auth'
@@ -51,7 +51,7 @@ export default function SignIn() {
     <div className="container mx-auto py-8">
       <Card className="max-w-md mx-auto">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center">Sign In</CardTitle>
+          <h1 className="text-2xl font-bold text-center leading-none tracking-tight">Sign In</h1>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSignIn} className="space-y-4">

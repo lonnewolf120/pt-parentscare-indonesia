@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
@@ -49,7 +49,7 @@ export default function ContactForm() {
   return (
     <Card className="border-pink">
       <CardHeader>
-        <CardTitle><span className="text-pink">Kirim Pesan via WhatsApp</span></CardTitle>
+        <h2 className="text-2xl font-semibold leading-none tracking-tight"><span className="text-pink">Kirim Pesan via WhatsApp</span></h2>
         <CardDescription>Isi formulir di bawah ini untuk membuka chat WhatsApp dengan detail pesan Anda.</CardDescription>
       </CardHeader>
       <CardContent>
