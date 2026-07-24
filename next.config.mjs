@@ -4,9 +4,12 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   images: {
-    // NOTE: optimization is intentionally disabled; re-enabling changes
-    // Vercel image-optimization billing, so it is a deployment decision.
-    unoptimized: true,
+    // Optimization enabled: Vercel serves resized WebP/AVIF on-demand.
+    // Local assets in /public are optimized automatically. Remote images
+    // (e.g. caregiver photos from the search backend) are marked
+    // `unoptimized` at the call site, so no remotePatterns entry is needed.
+    unoptimized: false,
+    formats: ['image/avif', 'image/webp'],
   },
   // Enable compression
   compress: true,

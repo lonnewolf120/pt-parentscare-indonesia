@@ -187,6 +187,9 @@ export default function CaregiversPage() {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="rounded-md object-cover"
+                  // Photos come from the remote search backend on an unknown
+                  // host; skip optimization so no remotePatterns entry is needed.
+                  unoptimized
                 />
               </div>
               <p>
